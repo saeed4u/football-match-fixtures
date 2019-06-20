@@ -1,9 +1,9 @@
 package com.saeed.android.scoreline.db.dao
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Query
 import com.saeed.android.scoreline.model.Match
-import io.reactivex.Flowable
 
 
 /**
@@ -13,10 +13,10 @@ import io.reactivex.Flowable
 interface MatchDao: BaseDao<Match> {
 
     @Query("SELECT * FROM `match`")
-    fun getAllMatches(): Flowable<List<Match>>
+    fun getAllMatches(): LiveData<List<Match>>
 
     @Query("SELECT * FROM `match` WHERE id=:matchId")
-    fun getMatch(matchId: Long): Flowable<Match>
+    fun getMatch(matchId: Long): LiveData<Match>
 
     @Query("DELETE FROM `match`")
     fun deleteAll()
