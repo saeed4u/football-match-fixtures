@@ -1,11 +1,11 @@
 package com.saeed.android.scoreline.db.dao
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.saeed.android.scoreline.model.Competition
-import io.reactivex.Flowable
 
 
 /**
@@ -18,7 +18,7 @@ interface CompetitionDao: BaseDao<Competition> {
     fun addCompetions(competitions: List<Competition>)
 
     @Query("SELECT * FROM competition")
-    fun getCompetitions(): Flowable<List<Competition>>
+    fun getCompetitions(): LiveData<List<Competition>>
 
     @Query("DELETE FROM competition")
     fun deleteAll()

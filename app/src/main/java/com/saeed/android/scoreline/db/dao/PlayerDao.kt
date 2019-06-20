@@ -1,9 +1,9 @@
 package com.saeed.android.scoreline.db.dao
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Query
 import com.saeed.android.scoreline.model.Player
-import io.reactivex.Flowable
 
 
 /**
@@ -13,9 +13,9 @@ import io.reactivex.Flowable
 interface PlayerDao : BaseDao<Player> {
 
     @Query("SELECT * FROM player")
-    fun getAllPlayers(): Flowable<List<Player>>
+    fun getAllPlayers(): LiveData<List<Player>>
 
     @Query("SELECT * FROM player where id=:playerId")
-    fun getPlayer(playerId: Long): Flowable<Player>
+    fun getPlayer(playerId: Long): LiveData<Player>
 
 }
