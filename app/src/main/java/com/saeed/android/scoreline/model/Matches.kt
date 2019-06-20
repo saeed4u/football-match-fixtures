@@ -4,6 +4,9 @@ package com.saeed.android.scoreline.model
 
 import androidx.room.Embedded
 import androidx.room.Entity
+import androidx.room.ForeignKey
+import androidx.room.ForeignKey.CASCADE
+import androidx.room.Ignore
 
 
 /**
@@ -30,8 +33,6 @@ data class Competition(
     var lastUpdated: String = ""
 )
 
-data class Player(var id: Long = 0L, var name: String = "", var position: String = "", var shirtNumber: Long = 0L)
-
 data class SubScore(var homeTeam: Long = 0L, var awayTeam: Long = 0L)
 
 data class Score(
@@ -41,7 +42,7 @@ data class Score(
     var halfTime: SubScore = SubScore()
 )
 
-data class Team(var id: Long = 0L, var name: String = "", var captain: Player = Player())
+data class MatchTeam(var id: Long = 0L, var name: String = "")
 
 @Entity(primaryKeys = ["id"])
 data class Match(
@@ -54,7 +55,41 @@ data class Match(
     var stage: String = "",
     var group: String = "",
     var lastUpdated: String = "",
-    @Embedded var homeTeam: Team = Team(),
-    @Embedded var awayTeam: Team = Team(),
+    @Embedded var homeTeam: MatchTeam = MatchTeam(),
+    @Embedded var awayTeam: MatchTeam = MatchTeam(),
     @Embedded var score: Score = Score()
+)
+
+@Entity(
+    primaryKeys = ["id"],
+    foreignKeys = [ForeignKey(
+        entity = Team::class,
+        parentColumns = ["id"],
+        childColumns = ["teamId"],
+        onDelete = CASCADE
+    )]
+)
+data class Player(
+    var id: Long = 0L,
+    var teamId: Long = 0,
+    var name: String = "",
+    var position: String = "",
+    var role: String = ""
+)
+
+@Entity(primaryKeys = ["id"])
+data class Team(
+    var id: Long = 0,
+    @Embedded var area: Area = Area(),
+    var name: String = "",
+    var shortName: String = "",
+    var tla: String = "",
+    var crestUrl: String = "",
+    var phone: String = "",
+    var website: String = "",
+    var email: String = "",
+    var founded: Int = 0,
+    var venue: String,
+    var lastUpdated: String,
+    @Ignore var squad: List<Player> = arrayListOf()
 )
