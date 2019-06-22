@@ -2,6 +2,7 @@ package com.saeed.android.scoreline.db.dao
 
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
+import androidx.room.Update
 
 
 /**
@@ -9,12 +10,10 @@ import androidx.room.OnConflictStrategy
  */
 interface BaseDao<T> {
 
-
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insert(vararg data: T)
+    fun insertAll(vararg data: T)
 
-
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertAll(vararg data: List<T>)
+    @Update
+    fun update(vararg data: T)
 
 }

@@ -29,7 +29,7 @@ class MatchRepo @Inject constructor(
             }
 
             override fun saveToDataSource(data: List<Match>) {
-                matchDao.insertAll(data)
+                matchDao.insertAll(data[0])
             }
 
             override fun shouldFetchData(data: List<Match>?): Boolean {

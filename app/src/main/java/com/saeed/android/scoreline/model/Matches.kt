@@ -2,11 +2,9 @@
 
 package com.saeed.android.scoreline.model
 
-import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.ForeignKey.CASCADE
-import androidx.room.Ignore
 
 
 /**
@@ -25,10 +23,11 @@ data class Season(
 
 @Entity(primaryKeys = ["id"])
 data class Competition(
-    val id: Long = 0L, @Embedded var area: Area = Area(),
+    val id: Long = 0L,
+    var area: Area = Area(),
     var name: String = "",
     var plan: String = "",
-    @Embedded var currentSeason: Season = Season(),
+    var currentSeason: Season = Season(),
     var numberOfAvailableSeasons: Long = 0L,
     var lastUpdated: String = ""
 )
@@ -47,17 +46,17 @@ data class MatchTeam(var id: Long = 0L, var name: String = "")
 @Entity(primaryKeys = ["id"])
 data class Match(
     var id: Long = 0L,
-    @Embedded var competition: Competition = Competition(),
-    @Embedded var season: Season = Season(),
+    var competition: Competition = Competition(),
+    var season: Season = Season(),
     var utcDate: String = "",
     var status: String = "",
     var attendance: Long = 0L,
     var stage: String = "",
     var group: String = "",
     var lastUpdated: String = "",
-    @Embedded var homeTeam: MatchTeam = MatchTeam(),
-    @Embedded var awayTeam: MatchTeam = MatchTeam(),
-    @Embedded var score: Score = Score()
+    var homeTeam: MatchTeam = MatchTeam(),
+    var awayTeam: MatchTeam = MatchTeam(),
+    var score: Score = Score()
 )
 
 @Entity(
@@ -80,7 +79,7 @@ data class Player(
 @Entity(primaryKeys = ["id"])
 data class Team(
     var id: Long = 0,
-    @Embedded var area: Area = Area(),
+    var area: Area = Area(),
     var name: String = "",
     var shortName: String = "",
     var tla: String = "",
@@ -90,6 +89,5 @@ data class Team(
     var email: String = "",
     var founded: Int = 0,
     var venue: String,
-    var lastUpdated: String,
-    @Ignore var squad: List<Player> = arrayListOf()
+    var lastUpdated: String
 )

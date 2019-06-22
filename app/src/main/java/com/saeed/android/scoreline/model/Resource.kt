@@ -1,6 +1,7 @@
 package com.saeed.android.scoreline.model
 
 import com.squareup.moshi.Moshi
+import javax.inject.Inject
 
 
 /**
@@ -10,11 +11,13 @@ class Resource<out T>(val status: Status, val message: String?, val data: T?) {
 
     var messageHolder: MessageHolder? = null
 
+    @Inject
+    lateinit var moshi: Moshi
+
     init {
         message?.let {
             messageHolder = try {
-                val moshi = Moshi.Builder().build()
-                moshi.adapter<MessageHolder>(MessageHolder::class.java).fromJson(it) as MessageHolder
+                moshi.adapter(MessageHolder::class.java).fromJson(it) as MessageHolder
             } catch (e: Exception) {
                 e.printStackTrace()
                 MessageHolder(400, "BAD REQUEST", true)
