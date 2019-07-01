@@ -1,0 +1,1801 @@
+{
+  "count": 39,
+  "filters": {},
+  "competition": {
+    "id": 2001,
+    "area": {
+      "id": 2077,
+      "name": "Europe"
+    },
+    "name": "UEFA Champions League",
+    "code": "CL",
+    "plan": "TIER_ONE",
+    "lastUpdated": "2019-06-29T04:30:00Z"
+  },
+  "matches": [
+    {
+      "id": 266391,
+      "season": {
+        "id": 495,
+        "startDate": "2019-06-25",
+        "endDate": "2020-05-30",
+        "currentMatchday": null
+      },
+      "utcDate": "2019-06-25T13:00:00Z",
+      "status": "FINISHED",
+      "matchday": null,
+      "stage": "PRELIMINARY_SEMI_FINALS",
+      "group": "Preliminary Semi-finals",
+      "lastUpdated": "2019-06-25T19:31:26Z",
+      "score": {
+        "winner": "AWAY_TEAM",
+        "duration": "REGULAR",
+        "fullTime": {
+          "homeTeam": 0,
+          "awayTeam": 1
+        },
+        "halfTime": {
+          "homeTeam": 0,
+          "awayTeam": 0
+        },
+        "extraTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "penalties": {
+          "homeTeam": null,
+          "awayTeam": null
+        }
+      },
+      "homeTeam": {
+        "id": 8102,
+        "name": "SP Tre Penne"
+      },
+      "awayTeam": {
+        "id": 1879,
+        "name": "FC Santa Coloma"
+      },
+      "referees": [
+        {
+          "id": 38757,
+          "name": "Ian McNabb",
+          "nationality": null
+        },
+        {
+          "id": 38600,
+          "name": "Paul Robinson",
+          "nationality": null
+        },
+        {
+          "id": 38758,
+          "name": "Stephen Bell",
+          "nationality": null
+        },
+        {
+          "id": 38477,
+          "name": "Jamie Robinson",
+          "nationality": null
+        }
+      ]
+    },
+    {
+      "id": 266390,
+      "season": {
+        "id": 495,
+        "startDate": "2019-06-25",
+        "endDate": "2020-05-30",
+        "currentMatchday": null
+      },
+      "utcDate": "2019-06-25T18:45:00Z",
+      "status": "FINISHED",
+      "matchday": null,
+      "stage": "PRELIMINARY_SEMI_FINALS",
+      "group": "Preliminary Semi-finals",
+      "lastUpdated": "2019-06-25T23:47:38Z",
+      "score": {
+        "winner": "HOME_TEAM",
+        "duration": "REGULAR",
+        "fullTime": {
+          "homeTeam": 1,
+          "awayTeam": 0
+        },
+        "halfTime": {
+          "homeTeam": 1,
+          "awayTeam": 0
+        },
+        "extraTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "penalties": {
+          "homeTeam": null,
+          "awayTeam": null
+        }
+      },
+      "homeTeam": {
+        "id": 8101,
+        "name": "KF Feronikeli"
+      },
+      "awayTeam": {
+        "id": 7281,
+        "name": "Lincoln Red Imps FC"
+      },
+      "referees": [
+        {
+          "id": 14931,
+          "name": "Fedayi San",
+          "nationality": null
+        },
+        {
+          "id": 30769,
+          "name": "Bekim Zogaj",
+          "nationality": null
+        },
+        {
+          "id": 31257,
+          "name": "Jonas Erni",
+          "nationality": null
+        },
+        {
+          "id": 32013,
+          "name": "Lukas Fähndrich",
+          "nationality": null
+        }
+      ]
+    },
+    {
+      "id": 266392,
+      "season": {
+        "id": 495,
+        "startDate": "2019-06-25",
+        "endDate": "2020-05-30",
+        "currentMatchday": null
+      },
+      "utcDate": "2019-06-28T18:45:00Z",
+      "status": "FINISHED",
+      "matchday": null,
+      "stage": "PRELIMINARY_FINAL",
+      "group": "Preliminary Final",
+      "lastUpdated": "2019-06-29T04:30:00Z",
+      "score": {
+        "winner": "HOME_TEAM",
+        "duration": "REGULAR",
+        "fullTime": {
+          "homeTeam": 2,
+          "awayTeam": 1
+        },
+        "halfTime": {
+          "homeTeam": 0,
+          "awayTeam": 0
+        },
+        "extraTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "penalties": {
+          "homeTeam": null,
+          "awayTeam": null
+        }
+      },
+      "homeTeam": {
+        "id": 8101,
+        "name": "KF Feronikeli"
+      },
+      "awayTeam": {
+        "id": 1879,
+        "name": "FC Santa Coloma"
+      },
+      "referees": [
+        {
+          "id": 100232,
+          "name": null,
+          "nationality": null
+        },
+        {
+          "id": 15632,
+          "name": "Trifon Petropoulos",
+          "nationality": null
+        },
+        {
+          "id": 97663,
+          "name": null,
+          "nationality": null
+        },
+        {
+          "id": 97687,
+          "name": "Edvin Becirovic",
+          "nationality": "Sweden"
+        },
+        {
+          "id": 120817,
+          "name": null,
+          "nationality": null
+        }
+      ]
+    },
+    {
+      "id": 269483,
+      "season": {
+        "id": 495,
+        "startDate": "2019-06-25",
+        "endDate": "2020-05-30",
+        "currentMatchday": null
+      },
+      "utcDate": "2019-07-09T13:00:00Z",
+      "status": "SCHEDULED",
+      "matchday": null,
+      "stage": "1ST_QUALIFYING_ROUND",
+      "group": null,
+      "lastUpdated": "2019-06-25T19:31:29Z",
+      "score": {
+        "winner": null,
+        "duration": "REGULAR",
+        "fullTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "halfTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "extraTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "penalties": {
+          "homeTeam": null,
+          "awayTeam": null
+        }
+      },
+      "homeTeam": {
+        "id": 1884,
+        "name": "Astana FK"
+      },
+      "awayTeam": {
+        "id": 5515,
+        "name": "FC CFR 1907 Cluj"
+      },
+      "referees": []
+    },
+    {
+      "id": 269481,
+      "season": {
+        "id": 495,
+        "startDate": "2019-06-25",
+        "endDate": "2020-05-30",
+        "currentMatchday": null
+      },
+      "utcDate": "2019-07-09T14:00:00Z",
+      "status": "SCHEDULED",
+      "matchday": null,
+      "stage": "1ST_QUALIFYING_ROUND",
+      "group": null,
+      "lastUpdated": "2019-06-26T10:30:05Z",
+      "score": {
+        "winner": null,
+        "duration": "REGULAR",
+        "fullTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "halfTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "extraTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "penalties": {
+          "homeTeam": null,
+          "awayTeam": null
+        }
+      },
+      "homeTeam": {
+        "id": 8164,
+        "name": "FC Ararat-Armenia"
+      },
+      "awayTeam": {
+        "id": 5277,
+        "name": "AIK Fotboll"
+      },
+      "referees": []
+    },
+    {
+      "id": 269477,
+      "season": {
+        "id": 495,
+        "startDate": "2019-06-25",
+        "endDate": "2020-05-30",
+        "currentMatchday": null
+      },
+      "utcDate": "2019-07-09T16:00:00Z",
+      "status": "SCHEDULED",
+      "matchday": null,
+      "stage": "1ST_QUALIFYING_ROUND",
+      "group": null,
+      "lastUpdated": "2019-06-26T10:30:05Z",
+      "score": {
+        "winner": null,
+        "duration": "REGULAR",
+        "fullTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "halfTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "extraTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "penalties": {
+          "homeTeam": null,
+          "awayTeam": null
+        }
+      },
+      "homeTeam": {
+        "id": 5106,
+        "name": "Nõmme Kalju FC"
+      },
+      "awayTeam": {
+        "id": 7285,
+        "name": "KF Shkëndija 79"
+      },
+      "referees": []
+    },
+    {
+      "id": 269505,
+      "season": {
+        "id": 495,
+        "startDate": "2019-06-25",
+        "endDate": "2020-05-30",
+        "currentMatchday": null
+      },
+      "utcDate": "2019-07-09T16:00:00Z",
+      "status": "SCHEDULED",
+      "matchday": null,
+      "stage": "1ST_QUALIFYING_ROUND",
+      "group": null,
+      "lastUpdated": "2019-06-26T10:30:06Z",
+      "score": {
+        "winner": null,
+        "duration": "REGULAR",
+        "fullTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "halfTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "extraTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "penalties": {
+          "homeTeam": null,
+          "awayTeam": null
+        }
+      },
+      "homeTeam": {
+        "id": 5123,
+        "name": "Helsingin JK"
+      },
+      "awayTeam": {
+        "id": 8166,
+        "name": "HB"
+      },
+      "referees": []
+    },
+    {
+      "id": 269487,
+      "season": {
+        "id": 495,
+        "startDate": "2019-06-25",
+        "endDate": "2020-05-30",
+        "currentMatchday": null
+      },
+      "utcDate": "2019-07-09T17:45:00Z",
+      "status": "SCHEDULED",
+      "matchday": null,
+      "stage": "1ST_QUALIFYING_ROUND",
+      "group": null,
+      "lastUpdated": "2019-06-25T19:31:29Z",
+      "score": {
+        "winner": null,
+        "duration": "REGULAR",
+        "fullTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "halfTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "extraTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "penalties": {
+          "homeTeam": null,
+          "awayTeam": null
+        }
+      },
+      "homeTeam": {
+        "id": 4275,
+        "name": "FK Sarajevo"
+      },
+      "awayTeam": {
+        "id": 732,
+        "name": "Celtic FC"
+      },
+      "referees": []
+    },
+    {
+      "id": 269479,
+      "season": {
+        "id": 495,
+        "startDate": "2019-06-25",
+        "endDate": "2020-05-30",
+        "currentMatchday": null
+      },
+      "utcDate": "2019-07-09T18:00:00Z",
+      "status": "SCHEDULED",
+      "matchday": null,
+      "stage": "1ST_QUALIFYING_ROUND",
+      "group": null,
+      "lastUpdated": "2019-06-26T10:30:05Z",
+      "score": {
+        "winner": null,
+        "duration": "REGULAR",
+        "fullTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "halfTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "extraTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "penalties": {
+          "homeTeam": null,
+          "awayTeam": null
+        }
+      },
+      "homeTeam": {
+        "id": 5819,
+        "name": "FK Sūduva Marijampolė"
+      },
+      "awayTeam": {
+        "id": 7283,
+        "name": "FK Crvena Zvezda"
+      },
+      "referees": []
+    },
+    {
+      "id": 269491,
+      "season": {
+        "id": 495,
+        "startDate": "2019-06-25",
+        "endDate": "2020-05-30",
+        "currentMatchday": null
+      },
+      "utcDate": "2019-07-09T18:00:00Z",
+      "status": "SCHEDULED",
+      "matchday": null,
+      "stage": "1ST_QUALIFYING_ROUND",
+      "group": null,
+      "lastUpdated": "2019-06-26T10:30:06Z",
+      "score": {
+        "winner": null,
+        "duration": "REGULAR",
+        "fullTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "halfTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "extraTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "penalties": {
+          "homeTeam": null,
+          "awayTeam": null
+        }
+      },
+      "homeTeam": {
+        "id": 1875,
+        "name": "F91 Diddeleng"
+      },
+      "awayTeam": {
+        "id": 5813,
+        "name": "Valletta FC"
+      },
+      "referees": []
+    },
+    {
+      "id": 269503,
+      "season": {
+        "id": 495,
+        "startDate": "2019-06-25",
+        "endDate": "2020-05-30",
+        "currentMatchday": null
+      },
+      "utcDate": "2019-07-09T18:00:00Z",
+      "status": "SCHEDULED",
+      "matchday": null,
+      "stage": "1ST_QUALIFYING_ROUND",
+      "group": null,
+      "lastUpdated": "2019-06-28T23:30:06Z",
+      "score": {
+        "winner": null,
+        "duration": "REGULAR",
+        "fullTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "halfTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "extraTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "penalties": {
+          "homeTeam": null,
+          "awayTeam": null
+        }
+      },
+      "homeTeam": {
+        "id": 1904,
+        "name": "The New Saints FC"
+      },
+      "awayTeam": {
+        "id": 8101,
+        "name": "KF Feronikeli"
+      },
+      "referees": []
+    },
+    {
+      "id": 269493,
+      "season": {
+        "id": 495,
+        "startDate": "2019-06-25",
+        "endDate": "2020-05-30",
+        "currentMatchday": null
+      },
+      "utcDate": "2019-07-10T15:30:00Z",
+      "status": "SCHEDULED",
+      "matchday": null,
+      "stage": "1ST_QUALIFYING_ROUND",
+      "group": null,
+      "lastUpdated": "2019-06-26T10:30:06Z",
+      "score": {
+        "winner": null,
+        "duration": "REGULAR",
+        "fullTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "halfTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "extraTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "penalties": {
+          "homeTeam": null,
+          "awayTeam": null
+        }
+      },
+      "homeTeam": {
+        "id": 7492,
+        "name": "FK Partizani"
+      },
+      "awayTeam": {
+        "id": 611,
+        "name": "Qarabağ Ağdam FK"
+      },
+      "referees": []
+    },
+    {
+      "id": 269489,
+      "season": {
+        "id": 495,
+        "startDate": "2019-06-25",
+        "endDate": "2020-05-30",
+        "currentMatchday": null
+      },
+      "utcDate": "2019-07-10T17:00:00Z",
+      "status": "SCHEDULED",
+      "matchday": null,
+      "stage": "1ST_QUALIFYING_ROUND",
+      "group": null,
+      "lastUpdated": "2019-06-25T19:31:29Z",
+      "score": {
+        "winner": null,
+        "duration": "REGULAR",
+        "fullTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "halfTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "extraTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "penalties": {
+          "homeTeam": null,
+          "awayTeam": null
+        }
+      },
+      "homeTeam": {
+        "id": 1880,
+        "name": "FC Sheriff Tiraspol"
+      },
+      "awayTeam": {
+        "id": 8165,
+        "name": "FC Saburtalo"
+      },
+      "referees": []
+    },
+    {
+      "id": 269507,
+      "season": {
+        "id": 495,
+        "startDate": "2019-06-25",
+        "endDate": "2020-05-30",
+        "currentMatchday": null
+      },
+      "utcDate": "2019-07-10T17:00:00Z",
+      "status": "SCHEDULED",
+      "matchday": null,
+      "stage": "1ST_QUALIFYING_ROUND",
+      "group": null,
+      "lastUpdated": "2019-06-26T10:30:07Z",
+      "score": {
+        "winner": null,
+        "duration": "REGULAR",
+        "fullTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "halfTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "extraTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "penalties": {
+          "homeTeam": null,
+          "awayTeam": null
+        }
+      },
+      "homeTeam": {
+        "id": 748,
+        "name": "FK BATE Borisov"
+      },
+      "awayTeam": {
+        "id": 5628,
+        "name": "GKS Piast Gliwice"
+      },
+      "referees": []
+    },
+    {
+      "id": 269485,
+      "season": {
+        "id": 495,
+        "startDate": "2019-06-25",
+        "endDate": "2020-05-30",
+        "currentMatchday": null
+      },
+      "utcDate": "2019-07-10T18:00:00Z",
+      "status": "SCHEDULED",
+      "matchday": null,
+      "stage": "1ST_QUALIFYING_ROUND",
+      "group": null,
+      "lastUpdated": "2019-06-26T10:30:05Z",
+      "score": {
+        "winner": null,
+        "duration": "REGULAR",
+        "fullTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "halfTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "extraTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "penalties": {
+          "homeTeam": null,
+          "awayTeam": null
+        }
+      },
+      "homeTeam": {
+        "id": 5954,
+        "name": "Ferencvárosi TC"
+      },
+      "awayTeam": {
+        "id": 1901,
+        "name": "PFK Ludogorets 1945 Razgrad"
+      },
+      "referees": []
+    },
+    {
+      "id": 269495,
+      "season": {
+        "id": 495,
+        "startDate": "2019-06-25",
+        "endDate": "2020-05-30",
+        "currentMatchday": null
+      },
+      "utcDate": "2019-07-10T18:15:00Z",
+      "status": "SCHEDULED",
+      "matchday": null,
+      "stage": "1ST_QUALIFYING_ROUND",
+      "group": null,
+      "lastUpdated": "2019-06-26T10:30:06Z",
+      "score": {
+        "winner": null,
+        "duration": "REGULAR",
+        "fullTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "halfTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "extraTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "penalties": {
+          "homeTeam": null,
+          "awayTeam": null
+        }
+      },
+      "homeTeam": {
+        "id": 7509,
+        "name": "ŠK Slovan Bratislava"
+      },
+      "awayTeam": {
+        "id": 7284,
+        "name": "FK Sutjeska Nikšić"
+      },
+      "referees": []
+    },
+    {
+      "id": 269497,
+      "season": {
+        "id": 495,
+        "startDate": "2019-06-25",
+        "endDate": "2020-05-30",
+        "currentMatchday": null
+      },
+      "utcDate": "2019-07-10T18:45:00Z",
+      "status": "SCHEDULED",
+      "matchday": null,
+      "stage": "1ST_QUALIFYING_ROUND",
+      "group": null,
+      "lastUpdated": "2019-06-25T19:31:29Z",
+      "score": {
+        "winner": null,
+        "duration": "REGULAR",
+        "fullTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "halfTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "extraTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "penalties": {
+          "homeTeam": null,
+          "awayTeam": null
+        }
+      },
+      "homeTeam": {
+        "id": 1896,
+        "name": "Linfield FC"
+      },
+      "awayTeam": {
+        "id": 889,
+        "name": "Rosenborg BK"
+      },
+      "referees": []
+    },
+    {
+      "id": 269501,
+      "season": {
+        "id": 495,
+        "startDate": "2019-06-25",
+        "endDate": "2020-05-30",
+        "currentMatchday": null
+      },
+      "utcDate": "2019-07-10T18:45:00Z",
+      "status": "SCHEDULED",
+      "matchday": null,
+      "stage": "1ST_QUALIFYING_ROUND",
+      "group": null,
+      "lastUpdated": "2019-06-26T10:30:06Z",
+      "score": {
+        "winner": null,
+        "duration": "REGULAR",
+        "fullTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "halfTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "extraTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "penalties": {
+          "homeTeam": null,
+          "awayTeam": null
+        }
+      },
+      "homeTeam": {
+        "id": 1873,
+        "name": "Dundalk FC"
+      },
+      "awayTeam": {
+        "id": 5826,
+        "name": "Rīga FC"
+      },
+      "referees": []
+    },
+    {
+      "id": 269499,
+      "season": {
+        "id": 495,
+        "startDate": "2019-06-25",
+        "endDate": "2020-05-30",
+        "currentMatchday": null
+      },
+      "utcDate": "2019-07-10T20:00:00Z",
+      "status": "SCHEDULED",
+      "matchday": null,
+      "stage": "1ST_QUALIFYING_ROUND",
+      "group": null,
+      "lastUpdated": "2019-06-26T10:30:06Z",
+      "score": {
+        "winner": null,
+        "duration": "REGULAR",
+        "fullTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "halfTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "extraTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "penalties": {
+          "homeTeam": null,
+          "awayTeam": null
+        }
+      },
+      "homeTeam": {
+        "id": 5945,
+        "name": "KF Valur"
+      },
+      "awayTeam": {
+        "id": 734,
+        "name": "NK Maribor"
+      },
+      "referees": []
+    },
+    {
+      "id": 269504,
+      "season": {
+        "id": 495,
+        "startDate": "2019-06-25",
+        "endDate": "2020-05-30",
+        "currentMatchday": null
+      },
+      "utcDate": "2019-07-16T00:00:00Z",
+      "status": "SCHEDULED",
+      "matchday": null,
+      "stage": "1ST_QUALIFYING_ROUND",
+      "group": null,
+      "lastUpdated": "2019-06-28T23:30:06Z",
+      "score": {
+        "winner": null,
+        "duration": "REGULAR",
+        "fullTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "halfTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "extraTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "penalties": {
+          "homeTeam": null,
+          "awayTeam": null
+        }
+      },
+      "homeTeam": {
+        "id": 8101,
+        "name": "KF Feronikeli"
+      },
+      "awayTeam": {
+        "id": 1904,
+        "name": "The New Saints FC"
+      },
+      "referees": []
+    },
+    {
+      "id": 269478,
+      "season": {
+        "id": 495,
+        "startDate": "2019-06-25",
+        "endDate": "2020-05-30",
+        "currentMatchday": null
+      },
+      "utcDate": "2019-07-16T15:00:00Z",
+      "status": "SCHEDULED",
+      "matchday": null,
+      "stage": "1ST_QUALIFYING_ROUND",
+      "group": null,
+      "lastUpdated": "2019-06-25T19:31:29Z",
+      "score": {
+        "winner": null,
+        "duration": "REGULAR",
+        "fullTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "halfTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "extraTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "penalties": {
+          "homeTeam": null,
+          "awayTeam": null
+        }
+      },
+      "homeTeam": {
+        "id": 7285,
+        "name": "KF Shkëndija 79"
+      },
+      "awayTeam": {
+        "id": 5106,
+        "name": "Nõmme Kalju FC"
+      },
+      "referees": []
+    },
+    {
+      "id": 269490,
+      "season": {
+        "id": 495,
+        "startDate": "2019-06-25",
+        "endDate": "2020-05-30",
+        "currentMatchday": null
+      },
+      "utcDate": "2019-07-16T17:30:00Z",
+      "status": "SCHEDULED",
+      "matchday": null,
+      "stage": "1ST_QUALIFYING_ROUND",
+      "group": null,
+      "lastUpdated": "2019-06-26T10:30:06Z",
+      "score": {
+        "winner": null,
+        "duration": "REGULAR",
+        "fullTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "halfTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "extraTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "penalties": {
+          "homeTeam": null,
+          "awayTeam": null
+        }
+      },
+      "homeTeam": {
+        "id": 8165,
+        "name": "FC Saburtalo"
+      },
+      "awayTeam": {
+        "id": 1880,
+        "name": "FC Sheriff Tiraspol"
+      },
+      "referees": []
+    },
+    {
+      "id": 269492,
+      "season": {
+        "id": 495,
+        "startDate": "2019-06-25",
+        "endDate": "2020-05-30",
+        "currentMatchday": null
+      },
+      "utcDate": "2019-07-16T18:00:00Z",
+      "status": "SCHEDULED",
+      "matchday": null,
+      "stage": "1ST_QUALIFYING_ROUND",
+      "group": null,
+      "lastUpdated": "2019-06-26T10:30:06Z",
+      "score": {
+        "winner": null,
+        "duration": "REGULAR",
+        "fullTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "halfTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "extraTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "penalties": {
+          "homeTeam": null,
+          "awayTeam": null
+        }
+      },
+      "homeTeam": {
+        "id": 5813,
+        "name": "Valletta FC"
+      },
+      "awayTeam": {
+        "id": 1875,
+        "name": "F91 Diddeleng"
+      },
+      "referees": []
+    },
+    {
+      "id": 269506,
+      "season": {
+        "id": 495,
+        "startDate": "2019-06-25",
+        "endDate": "2020-05-30",
+        "currentMatchday": null
+      },
+      "utcDate": "2019-07-16T18:00:00Z",
+      "status": "SCHEDULED",
+      "matchday": null,
+      "stage": "1ST_QUALIFYING_ROUND",
+      "group": null,
+      "lastUpdated": "2019-06-28T17:30:06Z",
+      "score": {
+        "winner": null,
+        "duration": "REGULAR",
+        "fullTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "halfTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "extraTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "penalties": {
+          "homeTeam": null,
+          "awayTeam": null
+        }
+      },
+      "homeTeam": {
+        "id": 8166,
+        "name": "HB"
+      },
+      "awayTeam": {
+        "id": 5123,
+        "name": "Helsingin JK"
+      },
+      "referees": []
+    },
+    {
+      "id": 269480,
+      "season": {
+        "id": 495,
+        "startDate": "2019-06-25",
+        "endDate": "2020-05-30",
+        "currentMatchday": null
+      },
+      "utcDate": "2019-07-16T18:45:00Z",
+      "status": "SCHEDULED",
+      "matchday": null,
+      "stage": "1ST_QUALIFYING_ROUND",
+      "group": null,
+      "lastUpdated": "2019-06-28T17:30:05Z",
+      "score": {
+        "winner": null,
+        "duration": "REGULAR",
+        "fullTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "halfTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "extraTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "penalties": {
+          "homeTeam": null,
+          "awayTeam": null
+        }
+      },
+      "homeTeam": {
+        "id": 7283,
+        "name": "FK Crvena Zvezda"
+      },
+      "awayTeam": {
+        "id": 5819,
+        "name": "FK Sūduva Marijampolė"
+      },
+      "referees": []
+    },
+    {
+      "id": 269502,
+      "season": {
+        "id": 495,
+        "startDate": "2019-06-25",
+        "endDate": "2020-05-30",
+        "currentMatchday": null
+      },
+      "utcDate": "2019-07-17T16:30:00Z",
+      "status": "SCHEDULED",
+      "matchday": null,
+      "stage": "1ST_QUALIFYING_ROUND",
+      "group": null,
+      "lastUpdated": "2019-06-26T10:30:06Z",
+      "score": {
+        "winner": null,
+        "duration": "REGULAR",
+        "fullTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "halfTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "extraTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "penalties": {
+          "homeTeam": null,
+          "awayTeam": null
+        }
+      },
+      "homeTeam": {
+        "id": 5826,
+        "name": "Rīga FC"
+      },
+      "awayTeam": {
+        "id": 1873,
+        "name": "Dundalk FC"
+      },
+      "referees": []
+    },
+    {
+      "id": 269482,
+      "season": {
+        "id": 495,
+        "startDate": "2019-06-25",
+        "endDate": "2020-05-30",
+        "currentMatchday": null
+      },
+      "utcDate": "2019-07-17T17:00:00Z",
+      "status": "SCHEDULED",
+      "matchday": null,
+      "stage": "1ST_QUALIFYING_ROUND",
+      "group": null,
+      "lastUpdated": "2019-06-26T10:30:05Z",
+      "score": {
+        "winner": null,
+        "duration": "REGULAR",
+        "fullTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "halfTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "extraTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "penalties": {
+          "homeTeam": null,
+          "awayTeam": null
+        }
+      },
+      "homeTeam": {
+        "id": 5277,
+        "name": "AIK Fotboll"
+      },
+      "awayTeam": {
+        "id": 8164,
+        "name": "FC Ararat-Armenia"
+      },
+      "referees": []
+    },
+    {
+      "id": 269494,
+      "season": {
+        "id": 495,
+        "startDate": "2019-06-25",
+        "endDate": "2020-05-30",
+        "currentMatchday": null
+      },
+      "utcDate": "2019-07-17T17:00:00Z",
+      "status": "SCHEDULED",
+      "matchday": null,
+      "stage": "1ST_QUALIFYING_ROUND",
+      "group": null,
+      "lastUpdated": "2019-06-28T17:30:05Z",
+      "score": {
+        "winner": null,
+        "duration": "REGULAR",
+        "fullTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "halfTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "extraTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "penalties": {
+          "homeTeam": null,
+          "awayTeam": null
+        }
+      },
+      "homeTeam": {
+        "id": 611,
+        "name": "Qarabağ Ağdam FK"
+      },
+      "awayTeam": {
+        "id": 7492,
+        "name": "FK Partizani"
+      },
+      "referees": []
+    },
+    {
+      "id": 269498,
+      "season": {
+        "id": 495,
+        "startDate": "2019-06-25",
+        "endDate": "2020-05-30",
+        "currentMatchday": null
+      },
+      "utcDate": "2019-07-17T17:00:00Z",
+      "status": "SCHEDULED",
+      "matchday": null,
+      "stage": "1ST_QUALIFYING_ROUND",
+      "group": null,
+      "lastUpdated": "2019-06-28T17:30:05Z",
+      "score": {
+        "winner": null,
+        "duration": "REGULAR",
+        "fullTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "halfTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "extraTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "penalties": {
+          "homeTeam": null,
+          "awayTeam": null
+        }
+      },
+      "homeTeam": {
+        "id": 889,
+        "name": "Rosenborg BK"
+      },
+      "awayTeam": {
+        "id": 1896,
+        "name": "Linfield FC"
+      },
+      "referees": []
+    },
+    {
+      "id": 269486,
+      "season": {
+        "id": 495,
+        "startDate": "2019-06-25",
+        "endDate": "2020-05-30",
+        "currentMatchday": null
+      },
+      "utcDate": "2019-07-17T17:30:00Z",
+      "status": "SCHEDULED",
+      "matchday": null,
+      "stage": "1ST_QUALIFYING_ROUND",
+      "group": null,
+      "lastUpdated": "2019-06-26T10:30:05Z",
+      "score": {
+        "winner": null,
+        "duration": "REGULAR",
+        "fullTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "halfTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "extraTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "penalties": {
+          "homeTeam": null,
+          "awayTeam": null
+        }
+      },
+      "homeTeam": {
+        "id": 1901,
+        "name": "PFK Ludogorets 1945 Razgrad"
+      },
+      "awayTeam": {
+        "id": 5954,
+        "name": "Ferencvárosi TC"
+      },
+      "referees": []
+    },
+    {
+      "id": 269484,
+      "season": {
+        "id": 495,
+        "startDate": "2019-06-25",
+        "endDate": "2020-05-30",
+        "currentMatchday": null
+      },
+      "utcDate": "2019-07-17T18:00:00Z",
+      "status": "SCHEDULED",
+      "matchday": null,
+      "stage": "1ST_QUALIFYING_ROUND",
+      "group": null,
+      "lastUpdated": "2019-06-26T10:30:05Z",
+      "score": {
+        "winner": null,
+        "duration": "REGULAR",
+        "fullTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "halfTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "extraTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "penalties": {
+          "homeTeam": null,
+          "awayTeam": null
+        }
+      },
+      "homeTeam": {
+        "id": 5515,
+        "name": "FC CFR 1907 Cluj"
+      },
+      "awayTeam": {
+        "id": 1884,
+        "name": "Astana FK"
+      },
+      "referees": []
+    },
+    {
+      "id": 269508,
+      "season": {
+        "id": 495,
+        "startDate": "2019-06-25",
+        "endDate": "2020-05-30",
+        "currentMatchday": null
+      },
+      "utcDate": "2019-07-17T18:00:00Z",
+      "status": "SCHEDULED",
+      "matchday": null,
+      "stage": "1ST_QUALIFYING_ROUND",
+      "group": null,
+      "lastUpdated": "2019-06-28T17:30:06Z",
+      "score": {
+        "winner": null,
+        "duration": "REGULAR",
+        "fullTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "halfTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "extraTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "penalties": {
+          "homeTeam": null,
+          "awayTeam": null
+        }
+      },
+      "homeTeam": {
+        "id": 5628,
+        "name": "GKS Piast Gliwice"
+      },
+      "awayTeam": {
+        "id": 748,
+        "name": "FK BATE Borisov"
+      },
+      "referees": []
+    },
+    {
+      "id": 269496,
+      "season": {
+        "id": 495,
+        "startDate": "2019-06-25",
+        "endDate": "2020-05-30",
+        "currentMatchday": null
+      },
+      "utcDate": "2019-07-17T18:15:00Z",
+      "status": "SCHEDULED",
+      "matchday": null,
+      "stage": "1ST_QUALIFYING_ROUND",
+      "group": null,
+      "lastUpdated": "2019-06-26T10:30:06Z",
+      "score": {
+        "winner": null,
+        "duration": "REGULAR",
+        "fullTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "halfTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "extraTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "penalties": {
+          "homeTeam": null,
+          "awayTeam": null
+        }
+      },
+      "homeTeam": {
+        "id": 7284,
+        "name": "FK Sutjeska Nikšić"
+      },
+      "awayTeam": {
+        "id": 7509,
+        "name": "ŠK Slovan Bratislava"
+      },
+      "referees": []
+    },
+    {
+      "id": 269500,
+      "season": {
+        "id": 495,
+        "startDate": "2019-06-25",
+        "endDate": "2020-05-30",
+        "currentMatchday": null
+      },
+      "utcDate": "2019-07-17T18:15:00Z",
+      "status": "SCHEDULED",
+      "matchday": null,
+      "stage": "1ST_QUALIFYING_ROUND",
+      "group": null,
+      "lastUpdated": "2019-06-28T17:30:05Z",
+      "score": {
+        "winner": null,
+        "duration": "REGULAR",
+        "fullTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "halfTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "extraTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "penalties": {
+          "homeTeam": null,
+          "awayTeam": null
+        }
+      },
+      "homeTeam": {
+        "id": 734,
+        "name": "NK Maribor"
+      },
+      "awayTeam": {
+        "id": 5945,
+        "name": "KF Valur"
+      },
+      "referees": []
+    },
+    {
+      "id": 269488,
+      "season": {
+        "id": 495,
+        "startDate": "2019-06-25",
+        "endDate": "2020-05-30",
+        "currentMatchday": null
+      },
+      "utcDate": "2019-07-17T18:45:00Z",
+      "status": "SCHEDULED",
+      "matchday": null,
+      "stage": "1ST_QUALIFYING_ROUND",
+      "group": null,
+      "lastUpdated": "2019-06-25T19:31:29Z",
+      "score": {
+        "winner": null,
+        "duration": "REGULAR",
+        "fullTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "halfTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "extraTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "penalties": {
+          "homeTeam": null,
+          "awayTeam": null
+        }
+      },
+      "homeTeam": {
+        "id": 732,
+        "name": "Celtic FC"
+      },
+      "awayTeam": {
+        "id": 4275,
+        "name": "FK Sarajevo"
+      },
+      "referees": []
+    },
+    {
+      "id": 269509,
+      "season": {
+        "id": 495,
+        "startDate": "2019-06-25",
+        "endDate": "2020-05-30",
+        "currentMatchday": null
+      },
+      "utcDate": "2019-07-23T17:00:00Z",
+      "status": "SCHEDULED",
+      "matchday": null,
+      "stage": "2ND_QUALIFYING_ROUND",
+      "group": null,
+      "lastUpdated": "2019-06-28T17:30:06Z",
+      "score": {
+        "winner": null,
+        "duration": "REGULAR",
+        "fullTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "halfTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "extraTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "penalties": {
+          "homeTeam": null,
+          "awayTeam": null
+        }
+      },
+      "homeTeam": {
+        "id": 1881,
+        "name": "FC Viktoria Plzeň"
+      },
+      "awayTeam": {
+        "id": 654,
+        "name": "PAE Olympiakos SFP"
+      },
+      "referees": []
+    },
+    {
+      "id": 269511,
+      "season": {
+        "id": 495,
+        "startDate": "2019-06-25",
+        "endDate": "2020-05-30",
+        "currentMatchday": null
+      },
+      "utcDate": "2019-07-23T18:00:00Z",
+      "status": "SCHEDULED",
+      "matchday": null,
+      "stage": "2ND_QUALIFYING_ROUND",
+      "group": null,
+      "lastUpdated": "2019-06-28T17:30:06Z",
+      "score": {
+        "winner": null,
+        "duration": "REGULAR",
+        "fullTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "halfTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "extraTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "penalties": {
+          "homeTeam": null,
+          "awayTeam": null
+        }
+      },
+      "homeTeam": {
+        "id": 674,
+        "name": "PSV"
+      },
+      "awayTeam": {
+        "id": 729,
+        "name": "FC Basel 1893"
+      },
+      "referees": []
+    },
+    {
+      "id": 269510,
+      "season": {
+        "id": 495,
+        "startDate": "2019-06-25",
+        "endDate": "2020-05-30",
+        "currentMatchday": null
+      },
+      "utcDate": "2019-07-30T00:00:00Z",
+      "status": "SCHEDULED",
+      "matchday": null,
+      "stage": "2ND_QUALIFYING_ROUND",
+      "group": null,
+      "lastUpdated": "2019-06-25T19:31:29Z",
+      "score": {
+        "winner": null,
+        "duration": "REGULAR",
+        "fullTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "halfTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "extraTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "penalties": {
+          "homeTeam": null,
+          "awayTeam": null
+        }
+      },
+      "homeTeam": {
+        "id": 654,
+        "name": "PAE Olympiakos SFP"
+      },
+      "awayTeam": {
+        "id": 1881,
+        "name": "FC Viktoria Plzeň"
+      },
+      "referees": []
+    },
+    {
+      "id": 269512,
+      "season": {
+        "id": 495,
+        "startDate": "2019-06-25",
+        "endDate": "2020-05-30",
+        "currentMatchday": null
+      },
+      "utcDate": "2019-07-30T00:00:00Z",
+      "status": "SCHEDULED",
+      "matchday": null,
+      "stage": "2ND_QUALIFYING_ROUND",
+      "group": null,
+      "lastUpdated": "2019-06-25T19:31:29Z",
+      "score": {
+        "winner": null,
+        "duration": "REGULAR",
+        "fullTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "halfTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "extraTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "penalties": {
+          "homeTeam": null,
+          "awayTeam": null
+        }
+      },
+      "homeTeam": {
+        "id": 729,
+        "name": "FC Basel 1893"
+      },
+      "awayTeam": {
+        "id": 674,
+        "name": "PSV"
+      },
+      "referees": []
+    }
+  ]
+}

@@ -1,9 +1,7 @@
 package com.saeed.android.scoreline.db.dao
 
-import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Query
-import androidx.room.Transaction
 import com.saeed.android.scoreline.model.Team
 import com.saeed.android.scoreline.model.TeamAndPlayers
 
@@ -14,11 +12,10 @@ import com.saeed.android.scoreline.model.TeamAndPlayers
 @Dao
 interface TeamDao : BaseDao<Team> {
 
-    @Transaction
     @Query("SELECT * FROM team")
-    fun getTeams(): LiveData<TeamAndPlayers>
+    fun getTeams(): List<TeamAndPlayers>
 
     @Query("DELETE FROM team")
-    fun deleteAll();
+    fun deleteAll()
 
 }

@@ -2,9 +2,7 @@ package com.saeed.android.scoreline.db
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.saeed.android.scoreline.LiveDataTestUtil
-import com.saeed.android.scoreline.model.Area
 import com.saeed.android.scoreline.model.Competition
-import com.saeed.android.scoreline.model.Season
 import org.hamcrest.CoreMatchers
 import org.hamcrest.MatcherAssert
 import org.junit.Test
@@ -34,12 +32,7 @@ class CompetitionDaoTest : DbBaseTest() {
         for (i in 0 until competitions.size) {
             val competition = compFromDb[i]
             val competition_ = competitions[i]
-            MatcherAssert.assertThat(competition.id, CoreMatchers.`is`(competition_.id))
-            MatcherAssert.assertThat(competition.name, CoreMatchers.`is`(competition_.name))
-            MatcherAssert.assertThat(competition.area, CoreMatchers.`is`(competition_.area))
-            MatcherAssert.assertThat(competition.currentSeason, CoreMatchers.`is`(competition_.currentSeason))
-            MatcherAssert.assertThat(competition.plan, CoreMatchers.`is`(competition_.plan))
-            MatcherAssert.assertThat(competition.lastUpdated, CoreMatchers.`is`(competition_.lastUpdated))
+            MatcherAssert.assertThat(competition, CoreMatchers.`is`(competition_))
         }
     }
 
@@ -70,18 +63,14 @@ class CompetitionDaoTest : DbBaseTest() {
 
         val newCompFromDb = LiveDataTestUtil.getValue(competitionDao.getCompetitions())
 
-        MatcherAssert.assertThat(newCompFromDb.size, CoreMatchers.`is`(0))
+        MatcherAssert.assertThat(0, CoreMatchers.`is`(newCompFromDb.size))
     }
 
     private fun createCompetition() {
         competitions = arrayListOf()
         for (i in 1..6) {
             competitions.add(
-                Competition(
-                    i.toLong(), Area(i.toLong(), "Area $i"),
-                    "Comp $i", "Plan $i", Season(i.toLong()),
-                    3, "2019-06-21 17:08"
-                )
+                getDummyCompetition(i.toLong())
             )
         }
 
