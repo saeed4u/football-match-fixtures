@@ -16,7 +16,7 @@ interface MatchDao: BaseDao<Match> {
     fun getAllMatches(): LiveData<List<Match>>
 
     @Query("SELECT * FROM `match` WHERE id=:matchId")
-    fun getMatch(matchId: Long): LiveData<Match>
+    fun getMatch(matchId: Long): Match
 
     @Query("DELETE FROM `match`")
     fun deleteAll()

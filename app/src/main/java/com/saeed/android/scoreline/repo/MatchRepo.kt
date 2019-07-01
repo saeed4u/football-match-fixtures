@@ -5,6 +5,7 @@ import com.saeed.android.scoreline.api.ApiResponse
 import com.saeed.android.scoreline.api.service.FootballDataService
 import com.saeed.android.scoreline.db.dao.MatchDao
 import com.saeed.android.scoreline.model.Match
+import com.saeed.android.scoreline.model.MatchResponse
 import com.saeed.android.scoreline.model.Resource
 import timber.log.Timber
 import javax.inject.Inject
@@ -23,20 +24,20 @@ class MatchRepo @Inject constructor(
     }
 
     fun getAllMatches(refresh: Boolean, dateFrom: String = "", dateTo: String = ""): LiveData<Resource<List<Match>>> {
-        return object : NetworkBoundRepo<List<Match>, List<Match>>() {
+        return object : NetworkBoundRepo<List<Match>, MatchResponse>() {
             override fun loadFromDataSource(): LiveData<List<Match>> {
                 return matchDao.getAllMatches()
             }
 
-            override fun saveToDataSource(data: List<Match>) {
-                matchDao.insertAll(data[0])
+            override fun saveToDataSource(data: MatchResponse) {
+                matchDao.insertAll(*data.matches.toTypedArray())
             }
 
             override fun shouldFetchData(data: List<Match>?): Boolean {
                 return refresh || data == null || data.isEmpty()
             }
 
-            override fun fetchDataFromApi(): LiveData<ApiResponse<List<Match>>> {
+            override fun fetchDataFromApi(): LiveData<ApiResponse<MatchResponse>> {
                 return footballDataService.getAllMatches(dateFrom, dateTo)
             }
 

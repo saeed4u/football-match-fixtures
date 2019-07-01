@@ -1,0 +1,30 @@
+{
+  "count": 1,
+  "filters": {
+  },
+  "matches": [
+    {
+      "id": 204967,
+      "competition": {
+        "id": 2013,
+        "name": "Série A"
+      },
+      "season": {
+        "id": 15,
+        "startDate": "2018-04-14",
+        "endDate": "2018-12-02",
+        "currentMatchday": 20,
+        "availableStages": [
+          "REGULAR_SEASON"
+        ]
+      },
+      "utcDate": "2018-08-22T22:30:00Z",
+      "status": "FINISHED",
+      "attendance": null,
+      "matchday": 20,
+      "stage": "REGULAR_SEASON",
+      "group": "Regular Season",
+      "lastUpdated": "2018-08-23T02:30:23Z"
+    }
+  ]
+}

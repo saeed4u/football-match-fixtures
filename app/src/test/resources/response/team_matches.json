@@ -1,0 +1,30 @@
+{
+  "count": 1,
+  "filters": {},
+  "matches": [
+    {
+      "id": 200030,
+      "competition": {
+        "id": 2000,
+        "name": "FIFA World Cup"
+      },
+      "season": {
+        "id": 1,
+        "startDate": "2018-06-14T17:00:00Z",
+        "endDate": "2018-07-15T17:00:00Z",
+        "currentMatchday": 3,
+        "availableStages": [
+          "GROUP_STAGE"
+        ]
+      },
+      "utcDate": "2018-06-17T15:00:00Z",
+      "status": "FINISHED",
+      "minute": null,
+      "attendance": 78011,
+      "matchday": 1,
+      "stage": "GROUP_STAGE",
+      "group": "Group F",
+      "lastUpdated": "2018-06-22T10:00:02Z"
+    }
+  ]
+}
