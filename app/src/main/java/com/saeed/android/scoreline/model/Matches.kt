@@ -48,6 +48,7 @@ data class MatchTeam(var id: Long? = 0L, var name: String? = "")
 data class Match(
     var id: Long? = 0L,
     var competition: Competition? = Competition(),
+    var teamId: Long? = 0L,
     var season: Season? = Season(),
     var utcDate: String? = "",
     var status: String? = "",
@@ -89,8 +90,8 @@ data class Team(
     var website: String? = "",
     var email: String? = "",
     var founded: Int? = 0,
-    var venue: String? ="",
-    var lastUpdated: String?="",
+    var venue: String? = "",
+    var lastUpdated: String? = "",
     @Ignore var squad: List<Player> = arrayListOf()
 ) {
     constructor(
