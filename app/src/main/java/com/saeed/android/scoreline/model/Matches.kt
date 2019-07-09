@@ -49,6 +49,7 @@ data class Match(
     var id: Long? = 0L,
     var competition: Competition? = Competition(),
     var teamId: Long? = 0L,
+    var competitionId: Long? = 0L,
     var season: Season? = Season(),
     var utcDate: String? = "",
     var status: String? = "",

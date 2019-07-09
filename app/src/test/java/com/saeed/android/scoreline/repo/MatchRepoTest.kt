@@ -38,31 +38,89 @@ class MatchRepoTest {
     }
 
     @Test
-    fun loadAllMatchesFromNetwork() {
-        val allMatches = MutableLiveData(listOf(Match()))
+    fun testGetAllMatches() {
+        val allMatches = MutableLiveData<List<Match>>()
         whenever(matchDao.getAllMatches()).thenReturn(allMatches)
 
         val response = MatchResponse(2, Competition(), listOf(Match(), Match()))
         val call = createSuccessCall(response)
         whenever(footballDataService.getAllMatches()).thenReturn(call)
 
-        val data = matchRepo.getAllMatches()
+        val matches = matchRepo.getAllMatches()
         verify(matchDao).getAllMatches()
         verifyNoMoreInteractions(footballDataService)
 
-        val observer = mock<Observer<Resource<List<Match>>>>()
-        data.observeForever(observer)
+        val matchObserver = mock<Observer<Resource<List<Match>>>>()
+        matches.observeForever(matchObserver)
         verifyNoMoreInteractions(footballDataService)
+
         val updatedData = MutableLiveData<List<Match>>()
         whenever(matchDao.getAllMatches()).thenReturn(updatedData)
 
         allMatches.postValue(null)
 
-        verify(observer).onChanged(Resource.loading(null))
+        verify(matchObserver).onChanged(Resource.loading(null))
         verify(footballDataService).getAllMatches()
         verify(matchDao).insertAll(*response.matches.toTypedArray())
-
         updatedData.postValue(response.matches)
-        verify(observer).onChanged(Resource.success(response.matches))
+        verify(matchObserver).onChanged(Resource.success(response.matches))
+    }
+
+    @Test
+    fun testGetTeamMatches(){
+        val teamMatches = MutableLiveData<List<Match>>()
+        whenever(matchDao.getTeamMatches(1L)).thenReturn(teamMatches)
+
+        val response = MatchResponse(2, Competition(), listOf(Match(), Match()))
+        val call = createSuccessCall(response)
+        whenever(footballDataService.getTeamMatches(1L)).thenReturn(call)
+
+        val matches = matchRepo.getTeamMatches(teamId = 1L)
+        verify(matchDao).getTeamMatches(1L)
+        verifyNoMoreInteractions(footballDataService)
+
+        val matchObserver = mock<Observer<Resource<List<Match>>>>()
+        matches.observeForever(matchObserver)
+        verifyNoMoreInteractions(footballDataService)
+
+        val updatedData = MutableLiveData<List<Match>>()
+        whenever(matchDao.getTeamMatches(1L)).thenReturn(updatedData)
+
+        teamMatches.postValue(null)
+
+        verify(matchObserver).onChanged(Resource.loading(null))
+        verify(footballDataService).getTeamMatches(1L)
+        verify(matchDao).insertAll(*response.matches.toTypedArray())
+        updatedData.postValue(response.matches)
+        verify(matchObserver).onChanged(Resource.success(response.matches))
+    }
+
+    @Test
+    fun testGetMatchesOfCompetition(){
+        val compMatches = MutableLiveData<List<Match>>()
+        whenever(matchDao.getCompetitionMatches(1L)).thenReturn(compMatches)
+
+        val response = MatchResponse(2, Competition(), listOf(Match(), Match()))
+        val call = createSuccessCall(response)
+        whenever(footballDataService.getMatchesOfCompetition(1L)).thenReturn(call)
+
+        val matches = matchRepo.getMatchesOfCompetition(competitionId = 1L)
+        verify(matchDao).getCompetitionMatches(1L)
+        verifyNoMoreInteractions(footballDataService)
+
+        val matchObserver = mock<Observer<Resource<List<Match>>>>()
+        matches.observeForever(matchObserver)
+        verifyNoMoreInteractions(footballDataService)
+
+        val updatedData = MutableLiveData<List<Match>>()
+        whenever(matchDao.getCompetitionMatches(1L)).thenReturn(updatedData)
+
+        compMatches.postValue(null)
+
+        verify(matchObserver).onChanged(Resource.loading(null))
+        verify(footballDataService).getMatchesOfCompetition(competitionId = 1L)
+        verify(matchDao).insertAll(*response.matches.toTypedArray())
+        updatedData.postValue(response.matches)
+        verify(matchObserver).onChanged(Resource.success(response.matches))
     }
 }
