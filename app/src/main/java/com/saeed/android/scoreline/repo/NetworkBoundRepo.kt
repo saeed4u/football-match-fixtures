@@ -16,7 +16,7 @@ abstract class NetworkBoundRepo<R, RT> {
     private val data: MediatorLiveData<Resource<R>> = MediatorLiveData()
 
     init {
-        val dataFromDB = this.loadFromDataSource()
+        val dataFromDB = this.loadFromDatabase()
         data.addSource(dataFromDB) { result ->
             data.removeSource(dataFromDB)
             if (shouldFetchData(result)) {
@@ -39,8 +39,8 @@ abstract class NetworkBoundRepo<R, RT> {
                 when (it.isSuccessful) {
                     true -> {
                         response.body?.let { requestType ->
-                            saveToDataSource(requestType)
-                            val loadedData = loadFromDataSource()
+                            saveToDatabase(requestType)
+                            val loadedData = loadFromDatabase()
                             data.addSource(loadedData) { newData ->
                                 newData?.let {
                                     setData(Resource.success(newData))
@@ -75,10 +75,10 @@ abstract class NetworkBoundRepo<R, RT> {
     }
 
     @WorkerThread
-    protected abstract fun loadFromDataSource(): LiveData<R>
+    protected abstract fun loadFromDatabase(): LiveData<R>
 
     @WorkerThread
-    protected abstract fun saveToDataSource(data: RT)
+    protected abstract fun saveToDatabase(data: RT)
 
     @MainThread
     protected abstract fun shouldFetchData(data: R?): Boolean
