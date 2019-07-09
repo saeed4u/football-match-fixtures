@@ -18,7 +18,7 @@ interface MatchDao : BaseDao<Match> {
     @Query("SELECT * FROM `match` WHERE teamId = :teamId")
     fun getTeamMatches(teamId: Long): LiveData<List<Match>>
 
-    @Query("SELECT * FROM `match` WHERE competition.id = :compId")
+    @Query("SELECT * FROM `match` WHERE competitionId = :compId")
     fun getCompetitionMatches(compId: Long): LiveData<List<Match>>
 
     @Query("SELECT * FROM `match` WHERE id=:matchId")
