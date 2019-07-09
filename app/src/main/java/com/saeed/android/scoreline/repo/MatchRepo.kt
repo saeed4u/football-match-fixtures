@@ -25,11 +25,11 @@ class MatchRepo @Inject constructor(
 
     fun getAllMatches(refresh: Boolean = false, dateFrom: String = "", dateTo: String = ""): LiveData<Resource<List<Match>>> {
         return object : NetworkBoundRepo<List<Match>, MatchResponse>() {
-            override fun loadFromDataSource(): LiveData<List<Match>> {
+            override fun loadFromDatabase(): LiveData<List<Match>> {
                 return matchDao.getAllMatches()
             }
 
-            override fun saveToDataSource(data: MatchResponse) {
+            override fun saveToDatabase(data: MatchResponse) {
                 matchDao.insertAll(*data.matches.toTypedArray())
             }
 
@@ -55,11 +55,11 @@ class MatchRepo @Inject constructor(
         dateTo: String = ""
     ): LiveData<Resource<List<Match>>> {
         return object : NetworkBoundRepo<List<Match>, MatchResponse>() {
-            override fun loadFromDataSource(): LiveData<List<Match>> {
+            override fun loadFromDatabase(): LiveData<List<Match>> {
                 return matchDao.getTeamMatches(teamId)
             }
 
-            override fun saveToDataSource(data: MatchResponse) {
+            override fun saveToDatabase(data: MatchResponse) {
                 matchDao.insertAll(*data.matches.toTypedArray())
             }
 
@@ -84,11 +84,11 @@ class MatchRepo @Inject constructor(
                                  dateTo: String = ""): LiveData<Resource<List<Match>>>{
 
         return object : NetworkBoundRepo<List<Match>,MatchResponse>(){
-            override fun loadFromDataSource(): LiveData<List<Match>> {
+            override fun loadFromDatabase(): LiveData<List<Match>> {
                 return matchDao.getCompetitionMatches(competitionId)
             }
 
-            override fun saveToDataSource(data: MatchResponse) {
+            override fun saveToDatabase(data: MatchResponse) {
                 matchDao.insertAll(*data.matches.toTypedArray())
             }
 
