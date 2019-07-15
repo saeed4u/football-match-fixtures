@@ -59,21 +59,36 @@ class TeamAndPlayerDaoTest : DbBaseTest() {
     @Test
     fun testCreateTeamAndPlayers() {
         val teamDao = db.teamDao()
-        val teamAndPlayersListFromDB = teamDao.getTeams()
-        MatcherAssert.assertThat(teamAndPlayersList.size, CoreMatchers.`is`(teamAndPlayersListFromDB.size))
+        val teamAndPlayersListFromDB = LiveDataTestUtil.getValue(teamDao.getTeams())
+        MatcherAssert.assertThat(
+            teamAndPlayersList.size,
+            CoreMatchers.`is`(teamAndPlayersListFromDB.size)
+        )
         for (i in 0 until teamAndPlayersListFromDB.size) {
             val teamAnbPlayersFromDB = teamAndPlayersListFromDB[i]
             val teamAndPlayers = teamAndPlayersList[i]
-            MatcherAssert.assertThat(teamAndPlayers.team, CoreMatchers.`is`(teamAnbPlayersFromDB.team))
-            MatcherAssert.assertThat(teamAndPlayers.players.size, CoreMatchers.`is`(teamAnbPlayersFromDB.players.size))
+            MatcherAssert.assertThat(
+                teamAndPlayers.team,
+                CoreMatchers.`is`(teamAnbPlayersFromDB.team)
+            )
+            MatcherAssert.assertThat(
+                teamAndPlayers.players.size,
+                CoreMatchers.`is`(teamAnbPlayersFromDB.players.size)
+            )
         }
     }
 
     @Test
-    fun testDeleteTeamAndPlayers(){
+    fun testDeleteTeamAndPlayers() {
         createTeamAndPlayers()
         db.teamDao().deleteAll()
-        MatcherAssert.assertThat(0,CoreMatchers.`is`(db.teamDao().getTeams().size))
-        MatcherAssert.assertThat(0, CoreMatchers.`is`(LiveDataTestUtil.getValue(db.playerDao().getAllPlayers()).size))
+        MatcherAssert.assertThat(
+            0,
+            CoreMatchers.`is`(LiveDataTestUtil.getValue(db.teamDao().getTeams()).size)
+        )
+        MatcherAssert.assertThat(
+            0,
+            CoreMatchers.`is`(LiveDataTestUtil.getValue(db.playerDao().getAllPlayers()).size)
+        )
     }
 }
