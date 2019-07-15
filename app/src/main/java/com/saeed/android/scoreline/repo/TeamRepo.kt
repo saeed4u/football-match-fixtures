@@ -14,7 +14,7 @@ import javax.inject.Inject
 /**
  * Created by Saeed on 2019-07-15.
  */
-class TeamRepo @Inject constructor(private val teamDao: TeamDao, private val footballDataService: FootballDataService) : Repo{
+class TeamRepo @Inject constructor(private val footballDataService: FootballDataService,private val teamDao: TeamDao) : Repo{
 
     fun getTeamsInCompetition(competitionId: Long,refresh: Boolean = false): LiveData<Resource<List<TeamAndPlayers>>>{
         return object : NetworkBoundRepo<List<TeamAndPlayers>,TeamsResponse>(){
