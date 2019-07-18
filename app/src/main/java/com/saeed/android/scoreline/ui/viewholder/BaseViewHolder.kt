@@ -1,4 +1,4 @@
-package com.saeed.android.scoreline.ui.adapter.viewholder
+package com.saeed.android.scoreline.ui.viewholder
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
