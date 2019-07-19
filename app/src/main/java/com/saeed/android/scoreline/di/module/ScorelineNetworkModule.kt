@@ -34,7 +34,7 @@ class ScorelineNetworkModule {
     @Singleton
     internal fun provideRetrofitInterface(okHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
-            .baseUrl("")
+            .baseUrl("https://api.football-data.org/v2/")
             .addConverterFactory(MoshiConverterFactory.create())
             .addCallAdapterFactory(LiveDataCallAdapterFactory())
             .client(okHttpClient)

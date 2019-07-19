@@ -7,6 +7,9 @@ import com.saeed.android.scoreline.db.dao.MatchDao
 import com.saeed.android.scoreline.model.Match
 import com.saeed.android.scoreline.model.MatchResponse
 import com.saeed.android.scoreline.model.Resource
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import timber.log.Timber
 import javax.inject.Inject
 
@@ -24,13 +27,17 @@ class MatchRepo @Inject constructor(
     }
 
     fun getAllMatches(refresh: Boolean = false, dateFrom: String = "", dateTo: String = ""): LiveData<Resource<List<Match>>> {
+
+        val scope = CoroutineScope(Dispatchers.IO)
         return object : NetworkBoundRepo<List<Match>, MatchResponse>() {
             override fun loadFromDatabase(): LiveData<List<Match>> {
                 return matchDao.getAllMatches()
             }
 
             override fun saveToDatabase(data: MatchResponse) {
-                matchDao.insertAll(*data.matches.toTypedArray())
+                scope.launch {
+                    matchDao.insertAll(*data.matches.toTypedArray())
+                }
             }
 
             override fun shouldFetchData(data: List<Match>?): Boolean {
@@ -54,13 +61,16 @@ class MatchRepo @Inject constructor(
         dateFrom: String = "",
         dateTo: String = ""
     ): LiveData<Resource<List<Match>>> {
+        val scope = CoroutineScope(Dispatchers.IO)
         return object : NetworkBoundRepo<List<Match>, MatchResponse>() {
             override fun loadFromDatabase(): LiveData<List<Match>> {
                 return matchDao.getTeamMatches(teamId)
             }
 
             override fun saveToDatabase(data: MatchResponse) {
-                matchDao.insertAll(*data.matches.toTypedArray())
+                scope.launch {
+                    matchDao.insertAll(*data.matches.toTypedArray())
+                }
             }
 
             override fun shouldFetchData(data: List<Match>?): Boolean {
@@ -83,13 +93,14 @@ class MatchRepo @Inject constructor(
                                  dateFrom: String = "",
                                  dateTo: String = ""): LiveData<Resource<List<Match>>>{
 
+        val scope = CoroutineScope(Dispatchers.IO)
         return object : NetworkBoundRepo<List<Match>,MatchResponse>(){
             override fun loadFromDatabase(): LiveData<List<Match>> {
                 return matchDao.getCompetitionMatches(competitionId)
             }
 
             override fun saveToDatabase(data: MatchResponse) {
-                matchDao.insertAll(*data.matches.toTypedArray())
+                scope.launch { matchDao.insertAll(*data.matches.toTypedArray()) }
             }
 
             override fun shouldFetchData(data: List<Match>?): Boolean {

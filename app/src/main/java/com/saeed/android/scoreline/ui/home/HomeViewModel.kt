@@ -7,24 +7,22 @@ import androidx.lifecycle.switchMap
 import com.saeed.android.scoreline.model.Competition
 import com.saeed.android.scoreline.model.Resource
 import com.saeed.android.scoreline.repo.CompetitionRepo
-import timber.log.Timber
+import com.saeed.android.scoreline.util.NullLiveData
 import javax.inject.Inject
 
 class HomeViewModel @Inject constructor(private val competitionRepo: CompetitionRepo) :
     ViewModel() {
 
 
-    private var competitionRefreshLiveData: MutableLiveData<Boolean> = MutableLiveData(true)
-    private val competitionListLiveData: LiveData<Resource<List<Competition>>>
+    private var competitionRefreshLiveData: MutableLiveData<Boolean> = MutableLiveData()
+    val competitionListLiveData: LiveData<Resource<List<Competition>>>
 
     init {
-        Timber.d("initiating ${this.javaClass.simpleName}")
-
         competitionListLiveData = competitionRefreshLiveData.switchMap {
-            competitionRepo.getCompetitions(it)
+            competitionRefreshLiveData.value?.let {
+                competitionRepo.getCompetitions(it)
+            } ?: NullLiveData.create()
         }
     }
-
-    fun getCompetitionsList() = competitionListLiveData.value
-    fun postCompetition(refresh: Boolean = false) = competitionRefreshLiveData.postValue(refresh)
+    fun refreshCompetitions(refresh: Boolean = false) = competitionRefreshLiveData.postValue(refresh)
 }

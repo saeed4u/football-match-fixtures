@@ -7,6 +7,9 @@ import com.saeed.android.scoreline.db.dao.TeamDao
 import com.saeed.android.scoreline.model.Resource
 import com.saeed.android.scoreline.model.TeamAndPlayers
 import com.saeed.android.scoreline.model.TeamsResponse
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import timber.log.Timber
 import javax.inject.Inject
 
@@ -14,16 +17,25 @@ import javax.inject.Inject
 /**
  * Created by Saeed on 2019-07-15.
  */
-class TeamRepo @Inject constructor(private val footballDataService: FootballDataService,private val teamDao: TeamDao) : Repo{
+class TeamRepo @Inject constructor(
+    private val footballDataService: FootballDataService,
+    private val teamDao: TeamDao
+) : Repo {
 
-    fun getTeamsInCompetition(competitionId: Long,refresh: Boolean = false): LiveData<Resource<List<TeamAndPlayers>>>{
-        return object : NetworkBoundRepo<List<TeamAndPlayers>,TeamsResponse>(){
+    fun getTeamsInCompetition(
+        competitionId: Long,
+        refresh: Boolean = false
+    ): LiveData<Resource<List<TeamAndPlayers>>> {
+        val scope = CoroutineScope(Dispatchers.IO)
+        return object : NetworkBoundRepo<List<TeamAndPlayers>, TeamsResponse>() {
             override fun loadFromDatabase(): LiveData<List<TeamAndPlayers>> {
                 return teamDao.getTeams()
             }
 
             override fun saveToDatabase(data: TeamsResponse) {
-                teamDao.insertAll(*data.teams.toTypedArray())
+                scope.launch {
+                    teamDao.insertAll(*data.teams.toTypedArray())
+                }
             }
 
             override fun shouldFetchData(data: List<TeamAndPlayers>?): Boolean {

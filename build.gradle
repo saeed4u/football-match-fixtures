@@ -10,6 +10,7 @@ buildscript {
     ext.navigation_version = '2.0.0'
     ext.dagger2_version = '2.23.1'
     ext.timber_version = '4.7.1'
+    ext.anko_version='0.10.8'
     repositories {
         google()
         jcenter()

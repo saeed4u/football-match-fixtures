@@ -13,7 +13,7 @@ class Converter {
     var moshi: Moshi = Moshi.Builder().build()
 
     @TypeConverter
-    fun fromSeason(season: Season): String {
+    fun fromSeason(season: Season?): String {
         return moshi.adapter(Season::class.java).toJson(season)
     }
 
@@ -23,7 +23,7 @@ class Converter {
     }
 
     @TypeConverter
-    fun fromSubScore(subScore: SubScore): String {
+    fun fromSubScore(subScore: SubScore?): String {
         return moshi.adapter(SubScore::class.java).toJson(subScore)
     }
 
@@ -33,7 +33,7 @@ class Converter {
     }
 
     @TypeConverter
-    fun fromScore(score: Score): String {
+    fun fromScore(score: Score?): String {
         return moshi.adapter(Score::class.java).toJson(score)
     }
 
@@ -43,7 +43,7 @@ class Converter {
     }
 
     @TypeConverter
-    fun fromMatchTeam(matchTeam: MatchTeam): String {
+    fun fromMatchTeam(matchTeam: MatchTeam?): String {
         return moshi.adapter(MatchTeam::class.java).toJson(matchTeam)
     }
 
@@ -53,7 +53,7 @@ class Converter {
     }
 
     @TypeConverter
-    fun fromArea(area: Area): String {
+    fun fromArea(area: Area?): String {
         return moshi.adapter(Area::class.java).toJson(area)
     }
 
@@ -63,7 +63,7 @@ class Converter {
     }
 
     @TypeConverter
-    fun fromCompetition(competition: Competition): String {
+    fun fromCompetition(competition: Competition?): String {
         return moshi.adapter(Competition::class.java).toJson(competition)
     }
 

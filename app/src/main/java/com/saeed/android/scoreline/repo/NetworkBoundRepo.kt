@@ -6,6 +6,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
 import com.saeed.android.scoreline.api.ApiResponse
 import com.saeed.android.scoreline.model.Resource
+import timber.log.Timber
 
 
 /**
@@ -33,6 +34,7 @@ abstract class NetworkBoundRepo<R, RT> {
     }
 
     private fun fetchDataFromNetwork(dataFromDB: LiveData<R>) {
+        Timber.d("Fetching data from network")
         val networkResponse = fetchDataFromApi()
         data.addSource(networkResponse) { response ->
             response?.let {
