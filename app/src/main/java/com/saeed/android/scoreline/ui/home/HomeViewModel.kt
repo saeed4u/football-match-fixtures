@@ -24,5 +24,7 @@ class HomeViewModel @Inject constructor(private val competitionRepo: Competition
             } ?: NullLiveData.create()
         }
     }
-    fun refreshCompetitions(refresh: Boolean = false) = competitionRefreshLiveData.postValue(refresh)
+
+    fun refreshCompetitions(refresh: Boolean = false) =
+        competitionRefreshLiveData.postValue(refresh)
 }

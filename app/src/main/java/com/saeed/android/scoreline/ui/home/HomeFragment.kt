@@ -68,7 +68,9 @@ class HomeFragment : BaseFragment(), BaseViewHolder.Delegate {
                     competitions.visibility = View.VISIBLE
                 }
                 ERROR -> {
-
+                    progress_circular.visibility = View.GONE
+                    competitions.visibility = View.VISIBLE
+                    //todo send error message
                 }
             }
         })
