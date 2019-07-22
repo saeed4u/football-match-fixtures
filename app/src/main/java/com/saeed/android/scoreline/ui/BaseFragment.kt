@@ -7,8 +7,6 @@ import com.saeed.android.scoreline.ui.dashboard.DashboardFragment
 import com.saeed.android.scoreline.ui.dashboard.DashboardViewModel
 import com.saeed.android.scoreline.ui.home.HomeFragment
 import com.saeed.android.scoreline.ui.home.HomeViewModel
-import com.saeed.android.scoreline.ui.notifications.NotificationsFragment
-import com.saeed.android.scoreline.ui.notifications.NotificationsViewModel
 import com.saeed.android.scoreline.util.ViewModelFactory
 import dagger.android.support.DaggerFragment
 import javax.inject.Inject
@@ -35,9 +33,6 @@ abstract class BaseFragment : DaggerFragment() {
                 this,
                 viewModelFactory
             ).get(HomeViewModel::class.java)
-            is NotificationsFragment -> ViewModelProviders.of(this, viewModelFactory).get(
-                NotificationsViewModel::class.java
-            )
             else -> null
         }
     }
