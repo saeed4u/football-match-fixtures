@@ -8,4 +8,21 @@
     <color name="secondaryTextColor">#212121</color>
     <color name="black">#000000</color>
     <color name="white">#FFFFFF</color>
+
+    <!--Greys-->
+    <color name="grey_3">#f7f7f7</color>
+    <color name="grey_5">#f2f2f2</color>
+    <color name="grey_10">#e6e6e6</color>
+    <color name="grey_20">#cccccc</color>
+    <color name="grey_40">#999999</color>
+    <color name="grey_60">#666666</color>
+    <color name="grey_80">#37474F</color>
+    <color name="grey_90">#263238</color>
+
+
+    <color name="deep_purple_500">#673AB7</color>
+    <color name="yellow_500">#FFEB3B</color>
+    <color name="deep_orange_400">#FF7043</color>
+    <color name="blue_grey_500">#607D8B</color>
+    <color name="pink_500">#E91E63</color>
 </resources>
