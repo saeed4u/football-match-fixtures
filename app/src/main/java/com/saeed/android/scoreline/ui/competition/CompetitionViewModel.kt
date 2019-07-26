@@ -1,4 +1,4 @@
-package com.saeed.android.scoreline.ui.home
+package com.saeed.android.scoreline.ui.competition
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

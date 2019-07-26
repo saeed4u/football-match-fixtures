@@ -1,7 +1,7 @@
 package com.saeed.android.scoreline.di.module.sub
 
 import com.saeed.android.scoreline.ui.dashboard.DashboardFragment
-import com.saeed.android.scoreline.ui.home.CompetitionFragment
+import com.saeed.android.scoreline.ui.competition.CompetitionFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

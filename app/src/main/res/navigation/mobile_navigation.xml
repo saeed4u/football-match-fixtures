@@ -16,7 +16,7 @@
 
     <fragment
             android:id="@+id/navigation_competitions"
-            android:name="com.saeed.android.scoreline.ui.home.CompetitionFragment"
+            android:name="com.saeed.android.scoreline.ui.competition.CompetitionFragment"
             android:label="@string/title_home"
             tools:layout="@layout/fragment_competitions" />
 

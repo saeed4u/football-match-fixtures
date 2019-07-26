@@ -1,4 +1,4 @@
-package com.saeed.android.scoreline.ui.home
+package com.saeed.android.scoreline.ui.competition
 
 import android.content.res.Configuration
 import android.os.Bundle
@@ -9,30 +9,35 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
 import com.saeed.android.scoreline.R
-import com.saeed.android.scoreline.databinding.FragmentHomeBinding
+import com.saeed.android.scoreline.databinding.FragmentCompetitionsBinding
+import com.saeed.android.scoreline.extension.viewModel
 import com.saeed.android.scoreline.model.Competition
 import com.saeed.android.scoreline.model.Status.*
 import com.saeed.android.scoreline.ui.BaseFragment
 import com.saeed.android.scoreline.ui.adapter.CompetitionAdapter
 import com.saeed.android.scoreline.ui.viewholder.BaseViewHolder
-import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.fragment_competitions.*
 import timber.log.Timber
 
 class CompetitionFragment : BaseFragment(), BaseViewHolder.Delegate {
+
+
+    private lateinit var binding: FragmentCompetitionsBinding
+    private val viewModel by lazy { viewModel(viewModelFactory, CompetitionViewModel::class) }
+
     override fun onItemClick(item: Any) {
         val competition = item as Competition
         Timber.d("Competition $competition")
     }
-
-    private lateinit var binding: FragmentHomeBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_competitions, container, false)
-        binding.viewModel = viewModel as CompetitionViewModel
+        binding =
+            DataBindingUtil.inflate(inflater, R.layout.fragment_competitions, container, false)
+        binding.viewModel = viewModel
         binding.lifecycleOwner = this
         return binding.root
     }
@@ -46,7 +51,7 @@ class CompetitionFragment : BaseFragment(), BaseViewHolder.Delegate {
         super.onResume()
         val orientation = resources.configuration.orientation
         var spanCount = 2
-        if (orientation == Configuration.ORIENTATION_LANDSCAPE){
+        if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
             spanCount = 3
         }
         (competitions.layoutManager as? GridLayoutManager)?.spanCount = spanCount
@@ -55,9 +60,9 @@ class CompetitionFragment : BaseFragment(), BaseViewHolder.Delegate {
 
     private fun initUI() {
         competitions.adapter = CompetitionAdapter(this)
-        (viewModel as CompetitionViewModel).refreshCompetitions()
-        (viewModel as CompetitionViewModel).competitionListLiveData.observe(this, Observer{
-            when(it.status){
+        viewModel.refreshCompetitions()
+        viewModel.competitionListLiveData.observe(this, Observer {
+            when (it.status) {
                 LOADING -> {
                     swipe_to_refresh.isRefreshing = false
                     progress_circular.visibility = View.VISIBLE
@@ -75,7 +80,7 @@ class CompetitionFragment : BaseFragment(), BaseViewHolder.Delegate {
             }
         })
         swipe_to_refresh.setOnRefreshListener {
-            (viewModel as CompetitionViewModel).refreshCompetitions(true)
+            viewModel.refreshCompetitions(true)
         }
     }
 }
