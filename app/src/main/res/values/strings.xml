@@ -5,4 +5,5 @@
     <string name="title_notifications">Notifications</string>
     <string name="view_matches">View matches</string>
     <string name="view_teams">View teams</string>
+    <string name="matches">Matches</string>
 </resources>

@@ -7,7 +7,7 @@
             android:title="@string/title_dashboard"/>
 
     <item
-            android:id="@+id/navigation_home"
+            android:id="@+id/navigation_competitions"
             android:icon="@drawable/ic_trophy"
             android:title="@string/title_home"/>
 

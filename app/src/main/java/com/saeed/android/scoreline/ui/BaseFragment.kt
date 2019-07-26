@@ -5,8 +5,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProviders
 import com.saeed.android.scoreline.ui.dashboard.DashboardFragment
 import com.saeed.android.scoreline.ui.dashboard.DashboardViewModel
-import com.saeed.android.scoreline.ui.home.HomeFragment
-import com.saeed.android.scoreline.ui.home.HomeViewModel
+import com.saeed.android.scoreline.ui.home.CompetitionFragment
+import com.saeed.android.scoreline.ui.home.CompetitionViewModel
 import com.saeed.android.scoreline.util.ViewModelFactory
 import dagger.android.support.DaggerFragment
 import javax.inject.Inject
@@ -29,10 +29,10 @@ abstract class BaseFragment : DaggerFragment() {
             is DashboardFragment -> ViewModelProviders.of(this, viewModelFactory).get(
                 DashboardViewModel::class.java
             )
-            is HomeFragment -> ViewModelProviders.of(
+            is CompetitionFragment -> ViewModelProviders.of(
                 this,
                 viewModelFactory
-            ).get(HomeViewModel::class.java)
+            ).get(CompetitionViewModel::class.java)
             else -> null
         }
     }

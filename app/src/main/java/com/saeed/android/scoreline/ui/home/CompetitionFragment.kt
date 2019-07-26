@@ -18,7 +18,7 @@ import com.saeed.android.scoreline.ui.viewholder.BaseViewHolder
 import kotlinx.android.synthetic.main.fragment_home.*
 import timber.log.Timber
 
-class HomeFragment : BaseFragment(), BaseViewHolder.Delegate {
+class CompetitionFragment : BaseFragment(), BaseViewHolder.Delegate {
     override fun onItemClick(item: Any) {
         val competition = item as Competition
         Timber.d("Competition $competition")
@@ -31,8 +31,8 @@ class HomeFragment : BaseFragment(), BaseViewHolder.Delegate {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false)
-        binding.viewModel = viewModel as HomeViewModel
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_competitions, container, false)
+        binding.viewModel = viewModel as CompetitionViewModel
         binding.lifecycleOwner = this
         return binding.root
     }
@@ -55,8 +55,8 @@ class HomeFragment : BaseFragment(), BaseViewHolder.Delegate {
 
     private fun initUI() {
         competitions.adapter = CompetitionAdapter(this)
-        (viewModel as HomeViewModel).refreshCompetitions()
-        (viewModel as HomeViewModel).competitionListLiveData.observe(this, Observer{
+        (viewModel as CompetitionViewModel).refreshCompetitions()
+        (viewModel as CompetitionViewModel).competitionListLiveData.observe(this, Observer{
             when(it.status){
                 LOADING -> {
                     swipe_to_refresh.isRefreshing = false
@@ -75,7 +75,7 @@ class HomeFragment : BaseFragment(), BaseViewHolder.Delegate {
             }
         })
         swipe_to_refresh.setOnRefreshListener {
-            (viewModel as HomeViewModel).refreshCompetitions(true)
+            (viewModel as CompetitionViewModel).refreshCompetitions(true)
         }
     }
 }

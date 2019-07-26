@@ -10,7 +10,7 @@ import com.saeed.android.scoreline.repo.CompetitionRepo
 import com.saeed.android.scoreline.util.NullLiveData
 import javax.inject.Inject
 
-class HomeViewModel @Inject constructor(private val competitionRepo: CompetitionRepo) :
+class CompetitionViewModel @Inject constructor(private val competitionRepo: CompetitionRepo) :
     ViewModel() {
 
 
