@@ -4,8 +4,10 @@ import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.saeed.android.scoreline.extension.bindResource
 import com.saeed.android.scoreline.model.Competition
+import com.saeed.android.scoreline.model.Match
 import com.saeed.android.scoreline.model.Resource
 import com.saeed.android.scoreline.ui.adapter.CompetitionAdapter
+import com.saeed.android.scoreline.ui.adapter.MatchAdapter
 import timber.log.Timber
 
 /**
@@ -22,4 +24,14 @@ fun bindCompetitionAdapter(recyclerView: RecyclerView, competitions: Resource<Li
         }
     }
 
+}
+
+@BindingAdapter("adapterMatches")
+fun bindMatchesAdapter(recyclerView: RecyclerView, matches: Resource<List<Match>>?) {
+    matches?.let {
+        recyclerView.bindResource(it) {
+            val adapter = recyclerView.adapter as? MatchAdapter
+            adapter?.addMatches(it)
+        }
+    }
 }

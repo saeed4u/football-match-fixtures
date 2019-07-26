@@ -3,8 +3,9 @@ package com.saeed.android.scoreline.di.module
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.saeed.android.scoreline.di.util.ViewModelKey
-import com.saeed.android.scoreline.ui.dashboard.DashboardViewModel
 import com.saeed.android.scoreline.ui.competition.CompetitionViewModel
+import com.saeed.android.scoreline.ui.dashboard.DashboardViewModel
+import com.saeed.android.scoreline.ui.matches.MatchesViewModel
 import com.saeed.android.scoreline.util.ViewModelFactory
 import dagger.Binds
 import dagger.Module
@@ -25,7 +26,12 @@ abstract class ViewModelModule {
     @Binds
     @IntoMap
     @ViewModelKey(CompetitionViewModel::class)
-    abstract fun bindHomeViewModel(competitionViewModel: CompetitionViewModel): ViewModel
+    abstract fun bindCompetitionViewModel(competitionViewModel: CompetitionViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(MatchesViewModel::class)
+    abstract fun bindMatchesViewModel(matchesViewModel: MatchesViewModel): ViewModel
 
     @Binds
     abstract fun bindViewModelFactory(viewModelFactory: ViewModelFactory): ViewModelProvider.Factory

@@ -1,7 +1,8 @@
 package com.saeed.android.scoreline.di.module.sub
 
-import com.saeed.android.scoreline.ui.dashboard.DashboardFragment
 import com.saeed.android.scoreline.ui.competition.CompetitionFragment
+import com.saeed.android.scoreline.ui.dashboard.DashboardFragment
+import com.saeed.android.scoreline.ui.matches.MatchesFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -12,10 +13,14 @@ import dagger.android.ContributesAndroidInjector
 @Module
 abstract class MainActivityFragmentModule {
 
-    @ContributesAndroidInjector(modules = [DashboardFragmentModule::class])
+    @ContributesAndroidInjector
     abstract fun providesDashboardFragment(): DashboardFragment
 
     @ContributesAndroidInjector
     abstract fun providesHomeFragment(): CompetitionFragment
+
+
+    @ContributesAndroidInjector
+    abstract fun providesMatchesFragment(): MatchesFragment
 
 }

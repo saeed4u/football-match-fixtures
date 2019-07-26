@@ -37,7 +37,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginStart="9dp"
                     android:layout_marginEnd="1dp"
-                    app:adapterCompetitions="@{viewModel.matchesListLiveData}"
+                    app:adapterMatches="@{viewModel.matchesListLiveData}"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     tools:listitem="@layout/match_list_item" />
 

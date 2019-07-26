@@ -20,6 +20,31 @@ import kotlinx.android.synthetic.main.fragment_competitions.*
 import timber.log.Timber
 
 class CompetitionFragment : BaseFragment(), BaseViewHolder.Delegate {
+    override fun initUI() {
+        competitions.adapter = CompetitionAdapter(this)
+        viewModel.refreshCompetitions()
+        viewModel.competitionListLiveData.observe(this, Observer {
+            when (it.status) {
+                LOADING -> {
+                    swipe_to_refresh.isRefreshing = false
+                    progress_circular.visibility = View.VISIBLE
+                    competitions.visibility = View.GONE
+                }
+                SUCCESS -> {
+                    progress_circular.visibility = View.GONE
+                    competitions.visibility = View.VISIBLE
+                }
+                ERROR -> {
+                    progress_circular.visibility = View.GONE
+                    competitions.visibility = View.VISIBLE
+                    //todo send error message
+                }
+            }
+        })
+        swipe_to_refresh.setOnRefreshListener {
+            viewModel.refreshCompetitions(true)
+        }
+    }
 
 
     private lateinit var binding: FragmentCompetitionsBinding
@@ -58,29 +83,4 @@ class CompetitionFragment : BaseFragment(), BaseViewHolder.Delegate {
     }
 
 
-    private fun initUI() {
-        competitions.adapter = CompetitionAdapter(this)
-        viewModel.refreshCompetitions()
-        viewModel.competitionListLiveData.observe(this, Observer {
-            when (it.status) {
-                LOADING -> {
-                    swipe_to_refresh.isRefreshing = false
-                    progress_circular.visibility = View.VISIBLE
-                    competitions.visibility = View.GONE
-                }
-                SUCCESS -> {
-                    progress_circular.visibility = View.GONE
-                    competitions.visibility = View.VISIBLE
-                }
-                ERROR -> {
-                    progress_circular.visibility = View.GONE
-                    competitions.visibility = View.VISIBLE
-                    //todo send error message
-                }
-            }
-        })
-        swipe_to_refresh.setOnRefreshListener {
-            viewModel.refreshCompetitions(true)
-        }
-    }
 }
