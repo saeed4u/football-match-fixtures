@@ -12,7 +12,7 @@ import dagger.android.ContributesAndroidInjector
 @Module
 abstract class MainActivityFragmentModule {
 
-    @ContributesAndroidInjector
+    @ContributesAndroidInjector(modules = [DashboardFragmentModule::class])
     abstract fun providesDashboardFragment(): DashboardFragment
 
     @ContributesAndroidInjector
