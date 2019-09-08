@@ -9,7 +9,7 @@ import okhttp3.Response
 /**
  * Created by Saeed on 2019-06-20.
  */
-class RequestInterceptorForApiKey() : Interceptor {
+class RequestInterceptorForApiKey : Interceptor {
 
     override fun intercept(chain: Interceptor.Chain): Response {
 

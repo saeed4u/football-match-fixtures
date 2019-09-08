@@ -1,11 +1,9 @@
 package com.saeed.android.scoreline.ui.matches
 
-import android.app.DatePickerDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.DatePicker
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import com.saeed.android.scoreline.R
@@ -19,12 +17,15 @@ import com.saeed.android.scoreline.ui.viewholder.BaseViewHolder
 import kotlinx.android.synthetic.main.fragment_competitions.progress_circular
 import kotlinx.android.synthetic.main.fragment_competitions.swipe_to_refresh
 import kotlinx.android.synthetic.main.fragment_matches.*
+import ru.slybeaver.slycalendarview.SlyCalendarDialog
 import timber.log.Timber
+import java.text.SimpleDateFormat
+import java.util.*
 
 /**
  * Created by Saeed on 2019-07-26.
  */
-class MatchesFragment : BaseFragment(), BaseViewHolder.Delegate{
+class MatchesFragment : BaseFragment(), BaseViewHolder.Delegate {
     override fun onItemClick(item: Any) {
         val match = item as Match
         Timber.d("Match $match")
@@ -36,18 +37,15 @@ class MatchesFragment : BaseFragment(), BaseViewHolder.Delegate{
         viewModel.matchesListLiveData.observe(this, Observer {
             when (it.status) {
                 Status.LOADING -> {
-                    swipe_to_refresh.isRefreshing = false
-                    progress_circular.visibility = View.VISIBLE
-                    matches.visibility = View.GONE
+                    setLoadingStatus()
                 }
                 Status.SUCCESS -> {
-                    progress_circular.visibility = View.GONE
-                    matches.visibility = View.VISIBLE
+                    setLoadingDoneStatus()
                 }
                 Status.ERROR -> {
                     progress_circular.visibility = View.GONE
                     matches.visibility = View.VISIBLE
-                    //todo send error message
+                    setLoadingDoneStatus()
                 }
             }
         })
@@ -56,14 +54,47 @@ class MatchesFragment : BaseFragment(), BaseViewHolder.Delegate{
         }
 
         filter_matches.setOnClickListener {
-           val datePicker = DatePickerDialog(baseActivity!!,object : DatePickerDialog.OnDateSetListener{
-               override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
-                   TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-               }
+            SlyCalendarDialog()
+                .setSingle(false)
+                .setCallback(object : SlyCalendarDialog.Callback {
+                    override fun onDataSelected(
+                        firstDate: Calendar?,
+                        secondDate: Calendar?,
+                        hours: Int,
+                        minutes: Int
+                    ) {
+                        firstDate?.let {
+                            val dateFormatter = SimpleDateFormat("yyyy-MM-dd",Locale.getDefault())
+                            val from = dateFormatter.format(it)
+                            var to = from
+                            if (secondDate!=null){
+                                to = dateFormatter.format(secondDate)
+                            }
+                        }
+                    }
 
-           },2019,1,24)
-            datePicker.show()
+                    override fun onCancelled() {
+                    }
+
+                }).show(fragmentManager, "MatchesDialog")
         }
+    }
+
+    private fun setLoadingDoneStatus() {
+        progress_circular.visibility = View.GONE
+        matches.visibility = View.VISIBLE
+        filter_matches.animate().scaleX(1F)
+            .scaleY(1F)
+            .start()
+    }
+
+    private fun setLoadingStatus() {
+        swipe_to_refresh.isRefreshing = false
+        progress_circular.visibility = View.VISIBLE
+        matches.visibility = View.GONE
+        filter_matches.animate().scaleX(0F)
+            .scaleY(0F)
+            .start()
     }
 
 

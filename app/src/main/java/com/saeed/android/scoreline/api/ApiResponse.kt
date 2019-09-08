@@ -17,33 +17,26 @@ class ApiResponse<T> {
     private val isError: Boolean
 
 
-    constructor(error: Throwable){
+    constructor(error: Throwable) {
         code = 500
         body = null
         message = error.message
         isError = true
     }
 
-    constructor(response: Response<T>){
+    constructor(response: Response<T>) {
         code = response.code()
-        if (response.isSuccessful){
-            this.message = response.message()
-            this.body = response.body()
+        if (response.isSuccessful) {
+            message = response.message()
+            body = response.body()
             isError = false
-        }else{
-            this.body = null
-            this.isError = true
+        } else {
+            body = null
+            isError = true
             var errorMessage: String? = null
-            response.errorBody()?.let {
-                try{
-                    errorMessage = response.errorBody()!!.toString()
-                }catch (e: Exception){
-                    e.printStackTrace()
-                }
-            }
-            errorMessage?.apply {
+            errorMessage = response.errorBody()?.toString()?.apply {
                 if (isNullOrEmpty() || trim { it <= ' ' }.isEmpty()) {
-                    errorMessage = response.message()
+                    response.message()
                 }
             }
             message = errorMessage
