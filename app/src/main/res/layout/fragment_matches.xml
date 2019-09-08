@@ -43,6 +43,17 @@
 
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/filter_matches"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                app:fabSize="normal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:srcCompat="@drawable/ic_filter_list_black_24dp"
+                app:tint="@color/white" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

@@ -8,7 +8,6 @@ import com.saeed.android.scoreline.model.Match
 import com.saeed.android.scoreline.model.Resource
 import com.saeed.android.scoreline.ui.adapter.CompetitionAdapter
 import com.saeed.android.scoreline.ui.adapter.MatchAdapter
-import timber.log.Timber
 
 /**
  * Created by Saeed on 2019-07-19.
@@ -16,7 +15,6 @@ import timber.log.Timber
 
 @BindingAdapter("adapterCompetitions")
 fun bindCompetitionAdapter(recyclerView: RecyclerView, competitions: Resource<List<Competition>>?) {
-    Timber.d("Binding done ${competitions?.status}")
     competitions?.let {
         recyclerView.bindResource(it) {
             val adapter = recyclerView.adapter as? CompetitionAdapter

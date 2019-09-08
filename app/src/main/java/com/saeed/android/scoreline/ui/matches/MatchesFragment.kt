@@ -1,28 +1,25 @@
 package com.saeed.android.scoreline.ui.matches
 
+import android.app.DatePickerDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.DatePicker
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import com.saeed.android.scoreline.R
 import com.saeed.android.scoreline.databinding.FragmentMatchesBinding
 import com.saeed.android.scoreline.extension.viewModel
-import com.saeed.android.scoreline.model.Competition
 import com.saeed.android.scoreline.model.Match
 import com.saeed.android.scoreline.model.Status
 import com.saeed.android.scoreline.ui.BaseFragment
-import com.saeed.android.scoreline.ui.adapter.CompetitionAdapter
 import com.saeed.android.scoreline.ui.adapter.MatchAdapter
 import com.saeed.android.scoreline.ui.viewholder.BaseViewHolder
-import kotlinx.android.synthetic.main.fragment_competitions.*
 import kotlinx.android.synthetic.main.fragment_competitions.progress_circular
 import kotlinx.android.synthetic.main.fragment_competitions.swipe_to_refresh
 import kotlinx.android.synthetic.main.fragment_matches.*
 import timber.log.Timber
-import kotlin.text.matches
-
 
 /**
  * Created by Saeed on 2019-07-26.
@@ -56,6 +53,16 @@ class MatchesFragment : BaseFragment(), BaseViewHolder.Delegate{
         })
         swipe_to_refresh.setOnRefreshListener {
             viewModel.refreshMatches(true)
+        }
+
+        filter_matches.setOnClickListener {
+           val datePicker = DatePickerDialog(baseActivity!!,object : DatePickerDialog.OnDateSetListener{
+               override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
+                   TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+               }
+
+           },2019,1,24)
+            datePicker.show()
         }
     }
 

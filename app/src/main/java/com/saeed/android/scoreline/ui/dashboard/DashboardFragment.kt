@@ -21,7 +21,7 @@ class DashboardFragment : DaggerFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        view_teams.setOnClickListener{
+        view_matches.setOnClickListener{
             findNavController().navigate(DashboardFragmentDirections.actionNavigationDashboardToNavigationMatches())
         }
     }
