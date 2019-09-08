@@ -34,7 +34,8 @@ class ApiResponse<T> {
             body = null
             isError = true
             var errorMessage: String? = null
-            errorMessage = response.errorBody()?.toString()?.apply {
+            errorMessage = response.errorBody()?.string()
+            errorMessage = errorMessage?.apply {
                 if (isNullOrEmpty() || trim { it <= ' ' }.isEmpty()) {
                     response.message()
                 }

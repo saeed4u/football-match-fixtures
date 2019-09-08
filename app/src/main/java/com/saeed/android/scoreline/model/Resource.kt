@@ -1,22 +1,20 @@
 package com.saeed.android.scoreline.model
 
 import com.squareup.moshi.Moshi
-import javax.inject.Inject
 
 
 /**
- * Created on 2019-06-20.
+ * Created by Saeed on 2019-06-20.
  */
 class Resource<out T>(val status: Status, val message: String?, val data: T?) {
 
     var messageHolder: MessageHolder? = null
 
-    @Inject
-    lateinit var moshi: Moshi
+    var moshi: Moshi = Moshi.Builder().build()
 
     init {
-        message?.let {
-            messageHolder = try {
+        messageHolder = message?.let {
+            try {
                 moshi.adapter(MessageHolder::class.java).fromJson(it) as MessageHolder
             } catch (e: Exception) {
                 e.printStackTrace()
@@ -25,15 +23,15 @@ class Resource<out T>(val status: Status, val message: String?, val data: T?) {
         }
     }
 
-    override fun equals(o: Any?): Boolean {
-        if (this === o) {
+    override fun equals(other: Any?): Boolean {
+        if (this === other) {
             return true
         }
-        if (o == null || javaClass != o.javaClass) {
+        if (other == null || javaClass != other.javaClass) {
             return false
         }
 
-        val resource = o as Resource<*>
+        val resource = other as Resource<*>
 
         if (status !== resource.status) {
             return false
@@ -66,7 +64,7 @@ class Resource<out T>(val status: Status, val message: String?, val data: T?) {
         }
 
         fun <T> error(msg: String, data: T?): Resource<T> {
-            return Resource(status = Status.ERROR, data = data, message = msg)
+            return Resource(status = Status.ERROR, data = data, message =msg)
         }
 
         fun <T> loading(data: T?): Resource<T> {

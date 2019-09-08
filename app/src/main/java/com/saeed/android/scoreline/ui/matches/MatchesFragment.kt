@@ -10,6 +10,7 @@ import com.saeed.android.scoreline.R
 import com.saeed.android.scoreline.databinding.FragmentMatchesBinding
 import com.saeed.android.scoreline.extension.viewModel
 import com.saeed.android.scoreline.model.Match
+import com.saeed.android.scoreline.model.MatchRequest
 import com.saeed.android.scoreline.model.Status
 import com.saeed.android.scoreline.ui.BaseFragment
 import com.saeed.android.scoreline.ui.adapter.MatchAdapter
@@ -31,9 +32,12 @@ class MatchesFragment : BaseFragment(), BaseViewHolder.Delegate {
         Timber.d("Match $match")
     }
 
+    private var dateTo: String = ""
+    private var dateFrom: String = ""
+
     override fun initUI() {
         matches.adapter = MatchAdapter(this)
-        viewModel.refreshMatches()
+        viewModel.refreshMatches(MatchRequest())
         viewModel.matchesListLiveData.observe(this, Observer {
             when (it.status) {
                 Status.LOADING -> {
@@ -43,14 +47,12 @@ class MatchesFragment : BaseFragment(), BaseViewHolder.Delegate {
                     setLoadingDoneStatus()
                 }
                 Status.ERROR -> {
-                    progress_circular.visibility = View.GONE
-                    matches.visibility = View.VISIBLE
                     setLoadingDoneStatus()
                 }
             }
         })
         swipe_to_refresh.setOnRefreshListener {
-            viewModel.refreshMatches(true)
+            refreshData(true)
         }
 
         filter_matches.setOnClickListener {
@@ -65,11 +67,12 @@ class MatchesFragment : BaseFragment(), BaseViewHolder.Delegate {
                     ) {
                         firstDate?.let {
                             val dateFormatter = SimpleDateFormat("yyyy-MM-dd",Locale.getDefault())
-                            val from = dateFormatter.format(it)
-                            var to = from
+                            dateFrom = dateFormatter.format(it.time)
+                            dateTo = dateFrom
                             if (secondDate!=null){
-                                to = dateFormatter.format(secondDate)
+                                dateTo = dateFormatter.format(secondDate.time)
                             }
+                            refreshData(true)
                         }
                     }
 
@@ -78,6 +81,10 @@ class MatchesFragment : BaseFragment(), BaseViewHolder.Delegate {
 
                 }).show(fragmentManager, "MatchesDialog")
         }
+    }
+
+    private fun refreshData(refreshData: Boolean = false) {
+        viewModel.refreshMatches(MatchRequest(refresh= refreshData,dateFrom = dateFrom, dateTo = dateTo))
     }
 
     private fun setLoadingDoneStatus() {

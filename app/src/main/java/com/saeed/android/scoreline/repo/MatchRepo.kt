@@ -5,6 +5,7 @@ import com.saeed.android.scoreline.api.ApiResponse
 import com.saeed.android.scoreline.api.service.FootballDataService
 import com.saeed.android.scoreline.db.dao.MatchDao
 import com.saeed.android.scoreline.model.Match
+import com.saeed.android.scoreline.model.MatchRequest
 import com.saeed.android.scoreline.model.MatchResponse
 import com.saeed.android.scoreline.model.Resource
 import kotlinx.coroutines.CoroutineScope
@@ -26,7 +27,7 @@ class MatchRepo @Inject constructor(
         Timber.d("MatchRepo initialized")
     }
 
-    fun getAllMatches(refresh: Boolean = false, dateFrom: String = "", dateTo: String = ""): LiveData<Resource<List<Match>>> {
+    fun getAllMatches(matchRequest: MatchRequest): LiveData<Resource<List<Match>>> {
 
         val scope = CoroutineScope(Dispatchers.IO)
         return object : NetworkBoundRepo<List<Match>, MatchResponse>() {
@@ -41,11 +42,11 @@ class MatchRepo @Inject constructor(
             }
 
             override fun shouldFetchData(data: List<Match>?): Boolean {
-                return refresh || data == null || data.isEmpty()
+                return matchRequest.refresh || data == null || data.isEmpty()
             }
 
             override fun fetchDataFromApi(): LiveData<ApiResponse<MatchResponse>> {
-                return footballDataService.getAllMatches(dateFrom, dateTo)
+                return footballDataService.getAllMatches(matchRequest.dateFrom, matchRequest.dateTo)
             }
 
             override fun onFetchFailed(message: String?) {
@@ -56,15 +57,12 @@ class MatchRepo @Inject constructor(
     }
 
     fun getTeamMatches(
-        refresh: Boolean = false,
-        teamId: Long,
-        dateFrom: String = "",
-        dateTo: String = ""
+        matchRequest: MatchRequest
     ): LiveData<Resource<List<Match>>> {
         val scope = CoroutineScope(Dispatchers.IO)
         return object : NetworkBoundRepo<List<Match>, MatchResponse>() {
             override fun loadFromDatabase(): LiveData<List<Match>> {
-                return matchDao.getTeamMatches(teamId)
+                return matchDao.getTeamMatches(matchRequest.teamId)
             }
 
             override fun saveToDatabase(data: MatchResponse) {
@@ -74,11 +72,11 @@ class MatchRepo @Inject constructor(
             }
 
             override fun shouldFetchData(data: List<Match>?): Boolean {
-                return refresh || data == null || data.isEmpty()
+                return matchRequest.refresh || data == null || data.isEmpty()
             }
 
             override fun fetchDataFromApi(): LiveData<ApiResponse<MatchResponse>> {
-                return footballDataService.getTeamMatches(teamId, dateFrom, dateTo)
+                return footballDataService.getTeamMatches(matchRequest.teamId, matchRequest.dateFrom, matchRequest.dateTo)
             }
 
             override fun onFetchFailed(message: String?) {
@@ -88,13 +86,15 @@ class MatchRepo @Inject constructor(
         }.getLiveData()
     }
 
-    fun getMatchesOfCompetition( refresh: Boolean = false,
-                                 competitionId: Long,
-                                 dateFrom: String = "",
-                                 dateTo: String = ""): LiveData<Resource<List<Match>>>{
+    fun getMatchesOfCompetition(
+        refresh: Boolean = false,
+        competitionId: Long,
+        dateFrom: String = "",
+        dateTo: String = ""
+    ): LiveData<Resource<List<Match>>> {
 
         val scope = CoroutineScope(Dispatchers.IO)
-        return object : NetworkBoundRepo<List<Match>,MatchResponse>(){
+        return object : NetworkBoundRepo<List<Match>, MatchResponse>() {
             override fun loadFromDatabase(): LiveData<List<Match>> {
                 return matchDao.getCompetitionMatches(competitionId)
             }
@@ -112,7 +112,7 @@ class MatchRepo @Inject constructor(
             }
 
             override fun onFetchFailed(message: String?) {
-                Timber.d("An error occured: $message")
+                Timber.d("An error occurred: $message")
             }
 
         }.getLiveData()
